@@ -14,7 +14,7 @@
     "keywords": "valeo, frizione, 500, YPSILON, KA’, 821457",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 2,
@@ -31,7 +31,7 @@
     "keywords": "valeo, frizione, grande punto, 1.3 mjet, 821458",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 3,
@@ -48,7 +48,7 @@
     "keywords": "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 4,
@@ -57,15 +57,15 @@
     "marca": "DAYCO",
     "codice": "KTBWP8841",
     "applicazione": "GOLF 6-7-8; AUDI A3; SEAT; SKODA; CUPRA",
-    "motore": "1.6/2.0 TDI ",
+    "motore": "1.6/2.0 TDI",
     "prezzo": "1x 179,90; 2x 159,90",
     "validita": "Ad Esaurimento",
-    "immagine": "assets/img/dayco_ktbwp8842.webp",
-    "thumb": "assets/thumbs/dayco_ktbwp8842.webp",
+    "immagine": "assets/img/dayco_ktbwp8841.webp",
+    "thumb": "assets/thumbs/dayco_ktbwp8841.webp",
     "keywords": "Dayco, SKF, distribuzione, vw, audi, Seat, 1.6, 2.0, tri golf7,",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 5,
@@ -82,7 +82,7 @@
     "keywords": "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 6,
@@ -90,7 +90,7 @@
     "categoria": "DISTRIBUZIONE",
     "marca": "DAYCO",
     "codice": "KBIO14",
-    "applicazione": "208; 308; C3; C4; DS3; DS4; CORSA; ADAM; ",
+    "applicazione": "208; 308; C3; C4; DS3; DS4; CORSA; ADAM;",
     "motore": "1.2 PURETECH",
     "prezzo": "1x 79,90; 2x 64,50; 5x 64,50 con uno in piu in omaggio",
     "validita": "Ad Esaurimento",
@@ -99,7 +99,7 @@
     "keywords": "Dayco, SKF, distribuzione, psa, stellantis, Citroen, ds, fiat, lancia, alfa, 1.2, puretech",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 7,
@@ -116,7 +116,7 @@
     "keywords": "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 8,
@@ -133,7 +133,7 @@
     "keywords": "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 9,
@@ -150,7 +150,7 @@
     "keywords": "Philips, Osram, h7, lampade, lampadina, posizione, abbaglianti, anabbaglianti",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
   },
   {
     "id": 10,
@@ -167,6 +167,176 @@
     "keywords": "Olio, lubrificanti, 5W30, 5W40, 0W30, 0W20, 5W20, 0W16",
     "attiva": true,
     "note": "REVOCABILE IN QUALSIASI MOMENTO",
-    "dataAggiornamento": "2026-07-02"
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 11,
+    "titolo": "Serie pastiglie freno ant. Bosch 0986424597",
+    "categoria": "FRENANTE",
+    "marca": "BOSCH",
+    "codice": "0986424597",
+    "applicazione": "Fiat Grande Punto; Fiorino; Qubo; Nemo; Bipper; Doblo; e molte altre",
+    "motore": "Applicazioni varie",
+    "prezzo": "Promo 3+3; sconto promo 69%; netto 26,65 nt",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/bosch_0986424597.webp",
+    "thumb": "assets/thumbs/bosch_0986424597.webp",
+    "keywords": "bosch, pastiglie, freno, frenante, 0986424597, grande punto, fiorino, qubo, nemo, bipper, doblo",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 12,
+    "titolo": "Devioguida Valeo in confezione ERA e-Motive",
+    "categoria": "ELETTRICO/ELETTRONICO",
+    "marca": "VALEO / ERA",
+    "codice": "DEVIOGUIDA_GPUNTO",
+    "applicazione": "Fiat Grande Punto dal 2005",
+    "motore": "Grande Punto",
+    "prezzo": "1 pz 89,90; 2 pz 69,60; regalo forbice elettrauto",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/valeo_devioguida_gpunto.webp",
+    "thumb": "assets/thumbs/valeo_devioguida_gpunto.webp",
+    "keywords": "valeo, era, e-motive, devioguida, devio guida, grande punto, fiat, 2005",
+    "attiva": true,
+    "note": "Codice articolo non indicato nel volantino: usare codice interno provvisorio",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 13,
+    "titolo": "Filtro olio originale PSA 1610693780",
+    "categoria": "FILTRI",
+    "marca": "PSA",
+    "codice": "1610693780",
+    "applicazione": "Peugeot; Citroën; DS Automobiles",
+    "motore": "Applicazioni PSA",
+    "prezzo": "Acquista 5 pezzi a 6,49 cad.; listino 23,51",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/psa_1610693780.webp",
+    "thumb": "assets/thumbs/psa_1610693780.webp",
+    "keywords": "psa, peugeot, citroen, ds, filtro olio, 1610693780, filtri",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 14,
+    "titolo": "Rothen Special additivo olio motore",
+    "categoria": "PRODOTTI TECNICI",
+    "marca": "ROTHEN",
+    "codice": "ROTHEN_SPECIAL_250ML",
+    "applicazione": "Additivo olio motore",
+    "motore": "Motori usurati / consumo olio",
+    "prezzo": "Acquista 4 pezzi; netto promo 9,90 cad.",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/rothen_special.webp",
+    "thumb": "assets/thumbs/rothen_special.webp",
+    "keywords": "rothen, special, additivo, olio motore, prodotti tecnici, compressione, consumo olio",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 15,
+    "titolo": "Liquido freni Brembo DOT 4",
+    "categoria": "FRENANTE",
+    "marca": "BREMBO",
+    "codice": "DOT4_1L",
+    "applicazione": "Liquido freni confezioni da 1 litro",
+    "motore": "DOT 4",
+    "prezzo": "5,95 cad.; acquisti 10 e 2 sono in omaggio",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/brembo_dot4.webp",
+    "thumb": "assets/thumbs/brembo_dot4.webp",
+    "keywords": "brembo, dot4, liquido freni, frenante, freni, 1 litro",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 16,
+    "titolo": "Pulitore freni spray ATE Brake Cleaner 500 ml",
+    "categoria": "FRENANTE",
+    "marca": "ATE",
+    "codice": "ATE_BRAKE_CLEANER_500ML",
+    "applicazione": "Pulitore freni spray 500 ml",
+    "motore": "Universale",
+    "prezzo": "1 CT 12 pz: 2,10 netto/pz; 3 CT 36 pz: 1,99 netto/pz",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/ate_brake_cleaner.webp",
+    "thumb": "assets/thumbs/ate_brake_cleaner.webp",
+    "keywords": "ate, brake cleaner, pulitore freni, spray, 500ml, frenante, officina",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 17,
+    "titolo": "Kit catena distribuzione Gates CHK1017MA",
+    "categoria": "DISTRIBUZIONE",
+    "marca": "GATES",
+    "codice": "CHK1017MA",
+    "applicazione": "Motori 1.3 MJet Euro 6",
+    "motore": "1.3 MJET EURO6",
+    "prezzo": "Netto outlet 49,90; per acquisto di almeno 3 pz",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/gates_chk1017ma.webp",
+    "thumb": "assets/thumbs/gates_chk1017ma.webp",
+    "keywords": "gates, kit catena, distribuzione, CHK1017MA, 1.3 mjet, euro6",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 18,
+    "titolo": "Promo filtri GPL Landi Renzo LV14 + FV14",
+    "categoria": "FILTRI",
+    "marca": "YDEA / JAPAN",
+    "codice": "LV14_FOGAS2S",
+    "applicazione": "Landi Renzo; Landi Renzo Omegas",
+    "motore": "GPL; diametro 14 mm",
+    "prezzo": "Pacchetto 20 filtri totali: 69,90",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/gpl_lv14_fogas2s.webp",
+    "thumb": "assets/thumbs/gpl_lv14_fogas2s.webp",
+    "keywords": "filtri gpl, landi renzo, ydea, japan, lv14, fogas2s, fv14, gas",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 19,
+    "titolo": "Pacchetto batterie Varta + omaggio Moretti",
+    "categoria": "ELETTRICO/ELETTRONICO",
+    "marca": "VARTA",
+    "codice": "PACCHETTO_VARTA_MORETTI",
+    "applicazione": "Pacchetto batterie Varta assortite",
+    "motore": "Batterie auto",
+    "prezzo": "Pacchetto 12 batterie; prezzi da tabella; omaggio 24 lattine Moretti",
+    "validita": "Fino ad esaurimento scorte",
+    "immagine": "assets/img/varta_moretti_luglio2026.webp",
+    "thumb": "assets/thumbs/varta_moretti_luglio2026.webp",
+    "keywords": "varta, batterie, batteria, elettrico, c22, d24, e11, d52, e39, f21, moretti, luglio 2026",
+    "attiva": true,
+    "note": "Verificare eventuale policy omaggio alcolici prima di diffusione pubblica",
+    "dataAggiornamento": "2026-07-03"
+  },
+  {
+    "id": 20,
+    "titolo": "Pacchetto assortito spazzole tergicristalli Valeo First",
+    "categoria": "PROMO GENERALI",
+    "marca": "VALEO",
+    "codice": "VAL575540-VAL575561",
+    "applicazione": "Spazzole tergicristalli Valeo First VF41/VF45/VF48/VF51/VF55/VF60/VF65",
+    "motore": "Tergicristalli",
+    "prezzo": "Totale pacchetto 81,90; 3,90 cad.",
+    "validita": "Ad Esaurimento",
+    "immagine": "assets/img/valeo_tergi_assortito.webp",
+    "thumb": "assets/thumbs/valeo_tergi_assortito.webp",
+    "keywords": "valeo, tergicristalli, spazzole, valeo first, vf41, vf45, vf48, vf51, vf55, vf60, vf65, promo generale",
+    "attiva": true,
+    "note": "Nuova riga da aggiungere al catalogo",
+    "dataAggiornamento": "2026-07-03"
   }
 ]

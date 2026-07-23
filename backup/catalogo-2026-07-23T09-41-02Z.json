@@ -524,7 +524,7 @@
     "motore" : "Bz&Ds",
     "applicazione" : "tt",
     "codice" : "5w30; 5w30; 0w30; 0w20; 10w40",
-    "attiva" : false
+    "attiva" : true
   },
   {
     "immagine" : "assets/img/champion-wolf_5w30_5w30_0w30_0w20_10w40.png",

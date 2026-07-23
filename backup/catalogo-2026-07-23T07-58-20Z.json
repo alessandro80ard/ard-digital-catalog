@@ -10,11 +10,11 @@
     "motore" : "Applicazioni varie",
     "prezzo" : "Promo 3+3; sconto promo 69%; netto 26,65 nt",
     "marca" : "BOSCH",
-    "keywords" : "bosch, pastiglie, freno, frenante, 0986424597, grande punto, fiorino, qubo, nemo, bipper, doblo",
+    "categoria" : "FRENANTE",
     "thumb" : "assets/thumbs/bosch_0986424597.webp",
     "titolo" : "Serie pastiglie freno ant. Bosch 0986424597",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FRENANTE"
+    "keywords" : "bosch, pastiglie, freno, frenante, 0986424597, grande punto, fiorino, qubo, nemo, bipper, doblo"
   },
   {
     "note" : "FINO A ESAURIMENTO",
@@ -27,11 +27,11 @@
     "motore" : "BZ E DS",
     "prezzo" : "",
     "marca" : "BREMBO/ATE",
-    "keywords" : "PASTIGLIE FRENO",
+    "categoria" : "FRENANTE",
     "thumb" : "assets/thumbs/brembo_ate_freni_pastiglie_ate_brembo.png",
     "titolo" : "SUPERSOTTOCOSTO FRENI ",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FRENANTE"
+    "keywords" : "PASTIGLIE FRENO"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -44,11 +44,11 @@
     "motore" : "1.2 BZ",
     "prezzo" : "1x 59,90; 2x 55,50; 3x 49,90",
     "marca" : "VALEO",
-    "keywords" : "valeo, frizione, 500, YPSILON, KA’, 821457",
+    "categoria" : "FRIZIONI",
     "thumb" : "assets/thumbs/valeo_821457.webp",
     "titolo" : "Kit Frizione Valeo 821457",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FRIZIONI"
+    "keywords" : "valeo, frizione, 500, YPSILON, KA’, 821457"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -61,11 +61,11 @@
     "motore" : "FCA 1.3Mjet; 1.2/1.4 Bz",
     "prezzo" : "1x 89,90; 2x 75,90; 3x 69,50",
     "marca" : "VALEO",
-    "keywords" : "valeo, frizione, grande punto, 1.3 mjet, 821458",
+    "categoria" : "FRIZIONI",
     "thumb" : "assets/thumbs/valeo_826522.webp",
     "titolo" : "Kit Frizione Valeo 826522",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FRIZIONI"
+    "keywords" : "valeo, frizione, grande punto, 1.3 mjet, 821458"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -78,11 +78,11 @@
     "motore" : "1.6 DIESEL MJET",
     "prezzo" : "1x 89,90; 2x 79,90; 3x 67,70",
     "marca" : "DAYCO",
-    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/dayco_ktbwp7610.webp",
     "titolo" : "Kit distribuzione KTB7610",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -95,11 +95,11 @@
     "motore" : "199a4000; 350a1000",
     "prezzo" : "1x 59,99; 2x 48,90; 3x 39,89",
     "marca" : "DAYCO",
-    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/dayco_ktbwp4662.webp",
     "titolo" : "Kit distribuzione KTBWP4662",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -112,11 +112,11 @@
     "motore" : "1.6/2.0 TDI",
     "prezzo" : "1x 179,90; 2x 159,90",
     "marca" : "DAYCO",
-    "keywords" : "Dayco, SKF, distribuzione, vw, audi, Seat, 1.6, 2.0, tri golf7,",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/dayco_ktbwp8841.webp",
     "titolo" : "Kit distribuzione KTBWP8841",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, vw, audi, Seat, 1.6, 2.0, tri golf7,"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -129,11 +129,11 @@
     "motore" : "1.2 PURETECH",
     "prezzo" : "1x 79,90; 2x 64,50; 5x 64,50 con uno in piu in omaggio",
     "marca" : "DAYCO",
-    "keywords" : "Dayco, SKF, distribuzione, psa, stellantis, Citroen, ds, fiat, lancia, alfa, 1.2, puretech",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/dayco_kbio14.webp",
     "titolo" : "Kit distribuzione KBIO14",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, psa, stellantis, Citroen, ds, fiat, lancia, alfa, 1.2, puretech"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -146,11 +146,11 @@
     "motore" : "199a4000; 350a1000",
     "prezzo" : "1x 59,99; 2x 48,90; 3x 39,89",
     "marca" : "SKF",
-    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/skf_vkmc022062.webp",
     "titolo" : "Kit distribuzione VKMC02206-2",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -163,11 +163,11 @@
     "motore" : "1.6 DIESEL MJET",
     "prezzo" : "1x 89,90; 2x 79,90",
     "marca" : "SKF",
-    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/skf_vkmc021992.webp",
     "titolo" : "Kit distribuzione VKMC02199-2",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet"
   },
   {
     "note" : "",
@@ -180,11 +180,11 @@
     "motore" : "1.2 PURETECH",
     "prezzo" : "1X 129,90; 2X 124,50",
     "marca" : "SKF",
-    "keywords" : "Dayco, SKF, distribuzione, psa, stellantis, Citroen, ds, fiat, lancia, alfa, 1.2, puretech",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/skf_vkma03306-1 skf 12 puretech.webp",
     "titolo" : "Kit distribuzione PURETECH PSA",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "Dayco, SKF, distribuzione, psa, stellantis, Citroen, ds, fiat, lancia, alfa, 1.2, puretech"
   },
   {
     "note" : "Nuova riga da aggiungere al catalogo",
@@ -197,11 +197,11 @@
     "motore" : "199a4000; 350a1000",
     "prezzo" : "37,90€ PER MINIMO 6PZ",
     "marca" : "GRAF",
-    "keywords" : "GRAF, Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/graf_kp1030_2.webp",
     "titolo" : "Kit distribuzione KP1030-2",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "GRAF, Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina"
   },
   {
     "note" : "Nuova riga da aggiungere al catalogo",
@@ -214,11 +214,11 @@
     "motore" : "1.6 DIESEL MJET",
     "prezzo" : "69,90€ PER MINIMO 6PZ",
     "marca" : "GRAF",
-    "keywords" : "GRAF, Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/graf_kp1352_5.webp",
     "titolo" : "Kit distribuzione KP1352-5",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "GRAF, Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -231,11 +231,11 @@
     "motore" : "1.3 MJET EURO6",
     "prezzo" : "Netto outlet 49,90; per acquisto di almeno 3 pz",
     "marca" : "GATES",
-    "keywords" : "gates, kit catena, distribuzione, CHK1017MA, 1.3 mjet, euro6",
+    "categoria" : "DISTRIBUZIONE",
     "thumb" : "assets/thumbs/gates_chk1017ma.webp",
     "titolo" : "Kit catena distribuzione Gates CHK1017MA",
     "validita" : "Ad Esaurimento",
-    "categoria" : "DISTRIBUZIONE"
+    "keywords" : "gates, kit catena, distribuzione, CHK1017MA, 1.3 mjet, euro6"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -248,11 +248,11 @@
     "motore" : "GPL; diametro 14 mm",
     "prezzo" : "Pacchetto 20 filtri totali: 69,90",
     "marca" : "YDEA / JAPAN",
-    "keywords" : "filtri gpl, landi renzo, ydea, japan, lv14, fogas2s, fv14, gas",
+    "categoria" : "FILTRI",
     "thumb" : "assets/thumbs/gpl_lv14_fogas2s.webp",
     "titolo" : "Promo filtri GPL Landi Renzo LV14 + FV14",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FILTRI"
+    "keywords" : "filtri gpl, landi renzo, ydea, japan, lv14, fogas2s, fv14, gas"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -265,11 +265,11 @@
     "motore" : "Applicazioni PSA",
     "prezzo" : "Acquista 5 pezzi a 6,49 cad.; listino 23,51",
     "marca" : "PSA",
-    "keywords" : "psa, peugeot, citroen, ds, filtro olio, 1610693780, filtri",
+    "categoria" : "FILTRI",
     "thumb" : "assets/thumbs/psa_1610693780.webp",
     "titolo" : "Filtro olio originale PSA 1610693780",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FILTRI"
+    "keywords" : "psa, peugeot, citroen, ds, filtro olio, 1610693780, filtri"
   },
   {
     "note" : "Nuova riga da aggiungere al catalogo",
@@ -282,11 +282,11 @@
     "motore" : "199a4000; 350a1000, 1.3MJET, 1.6MJET, 1.5DCI",
     "prezzo" : "SCEGLII QUANTITA’ PER RIGA ED AVRAI NETTO RISERVATO",
     "marca" : "UFI",
-    "keywords" : "Filtri UFI; aria, olio, diesel, carburante, tagliando, gasolio, benzina",
+    "categoria" : "FILTRI",
     "thumb" : "assets/thumbs/ufi_filtri_outlet.webp",
     "titolo" : "FILTRI UFI . ITALIA OUTLET 7.26",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FILTRI"
+    "keywords" : "Filtri UFI; aria, olio, diesel, carburante, tagliando, gasolio, benzina"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -299,11 +299,11 @@
     "motore" : "DIESEL E BENZINA",
     "prezzo" : "SU RICHIESTA",
     "marca" : "ENEOS",
-    "keywords" : "Olio, lubrificanti, 5W30, 5W40, 0W30, 0W20, 5W20, 0W16",
+    "categoria" : "LUBRIFICANTI",
     "thumb" : "assets/thumbs/eneos_logoeneos1.webp",
     "titolo" : "Lubrificante ENEOS",
     "validita" : "Ad Esaurimento",
-    "categoria" : "LUBRIFICANTI"
+    "keywords" : "Olio, lubrificanti, 5W30, 5W40, 0W30, 0W20, 5W20, 0W16"
   },
   {
     "note" : "Nuova riga da aggiungere al catalogo",
@@ -316,11 +316,11 @@
     "motore" : "DIESEL E BENZINA",
     "prezzo" : "PER 5 CT - CODICE",
     "marca" : "ENEOS",
-    "keywords" : "Olio, lubrificanti, 5W30, 5W40, 0W30, 0W20, 5W20, 0W16",
+    "categoria" : "LUBRIFICANTI",
     "thumb" : "assets/thumbs/eneos_outlet_5ct.webp",
     "titolo" : "Lubrificante ENEOS - 60",
     "validita" : "Ad Esaurimento",
-    "categoria" : "LUBRIFICANTI"
+    "keywords" : "Olio, lubrificanti, 5W30, 5W40, 0W30, 0W20, 5W20, 0W16"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -333,11 +333,11 @@
     "motore" : "Motori usurati / consumo olio",
     "prezzo" : "Acquista 4 pezzi; netto promo 9,90 cad.",
     "marca" : "ROTHEN",
-    "keywords" : "rothen, special, additivo, olio motore, prodotti tecnici, compressione, consumo olio",
+    "categoria" : "PRODOTTI TECNICI",
     "thumb" : "assets/thumbs/rothen_special.webp",
     "titolo" : "Rothen Special additivo olio motore",
     "validita" : "Ad Esaurimento",
-    "categoria" : "PRODOTTI TECNICI"
+    "keywords" : "rothen, special, additivo, olio motore, prodotti tecnici, compressione, consumo olio"
   },
   {
     "note" : "Netto finale sviluppato: 7,63€",
@@ -350,11 +350,11 @@
     "motore" : "BENZINA E DIESEL",
     "prezzo" : "9,15€ x5pz ed il sesto in Omaggio",
     "marca" : "ROTHEN",
-    "keywords" : "Turafalle",
+    "categoria" : "PRODOTTI TECNICI",
     "thumb" : "assets/thumbs/rothen_rtn_tf.png",
     "titolo" : "TURAFALLE LIQUIDO PER RADIATORI",
     "validita" : "Ad Esaurimento",
-    "categoria" : "PRODOTTI TECNICI"
+    "keywords" : "Turafalle"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -367,11 +367,11 @@
     "motore" : "DOT 4",
     "prezzo" : "5,95 cad.; acquisti 10 e 2 sono in omaggio",
     "marca" : "BREMBO",
-    "keywords" : "brembo, dot4, liquido freni, frenante, freni, 1 litro",
+    "categoria" : "FRENANTE",
     "thumb" : "assets/thumbs/brembo_dot4.webp",
     "titolo" : "Liquido freni Brembo DOT 4",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FRENANTE"
+    "keywords" : "brembo, dot4, liquido freni, frenante, freni, 1 litro"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -384,11 +384,11 @@
     "motore" : "Universale",
     "prezzo" : "1 CT 12 pz: 2,10 netto/pz; 3 CT 36 pz: 1,99 netto/pz",
     "marca" : "ATE",
-    "keywords" : "ate, brake cleaner, pulitore freni, spray, 500ml, frenante, officina",
+    "categoria" : "FRENANTE",
     "thumb" : "assets/thumbs/ate_brake_cleaner.webp",
     "titolo" : "Pulitore freni spray ATE Brake Cleaner 500 ml",
     "validita" : "Ad Esaurimento",
-    "categoria" : "FRENANTE"
+    "keywords" : "ate, brake cleaner, pulitore freni, spray, 500ml, frenante, officina"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -401,11 +401,11 @@
     "motore" : "Tergicristalli",
     "prezzo" : "Totale pacchetto 81,90; 3,90 cad.",
     "marca" : "VALEO",
-    "keywords" : "valeo, tergicristalli, spazzole, valeo first, vf41, vf45, vf48, vf51, vf55, vf60, vf65, promo generale",
+    "categoria" : "PROMO GENERALI",
     "thumb" : "assets/thumbs/valeo_tergi_assortito.webp",
     "titolo" : "Pacchetto assortito spazzole tergicristalli Valeo First",
     "validita" : "Ad Esaurimento",
-    "categoria" : "PROMO GENERALI"
+    "keywords" : "valeo, tergicristalli, spazzole, valeo first, vf41, vf45, vf48, vf51, vf55, vf60, vf65, promo generale"
   },
   {
     "note" : "ACQUISTA 2 COPPIE PER TIPO; PACCHETTO 6 COPPIE.",
@@ -418,11 +418,11 @@
     "motore" : "TUTTI I MOTORI",
     "prezzo" : "17,90; 18,90; 16,90",
     "marca" : "VALEO",
-    "keywords" : "TERGI CRISTALLO SU MISURA",
+    "categoria" : "PROMO GENERALI",
     "thumb" : "assets/thumbs/valeo_vf839_vf334_vf345.png",
     "titolo" : "VALEO TERGI DEDICATI",
     "validita" : "Ad Esaurimento",
-    "categoria" : "PROMO GENERALI"
+    "keywords" : "TERGI CRISTALLO SU MISURA"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -435,11 +435,11 @@
     "motore" : "TUTTI H7 PHILIPS",
     "prezzo" : "100x 1,59",
     "marca" : "PHILIPS",
-    "keywords" : "Philips, Osram, h7, lampade, lampadina, posizione, abbaglianti, anabbaglianti",
+    "categoria" : "ELETTRICO/ELETTRONICO",
     "thumb" : "assets/thumbs/philips_12972cdc1.webp",
     "titolo" : "Lampadine H7 Philips",
     "validita" : "Ad Esaurimento",
-    "categoria" : "ELETTRICO/ELETTRONICO"
+    "keywords" : "Philips, Osram, h7, lampade, lampadina, posizione, abbaglianti, anabbaglianti"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -452,11 +452,11 @@
     "motore" : "Grande Punto",
     "prezzo" : "1 pz 89,90; 2 pz 69,60; regalo forbice elettrauto",
     "marca" : "VALEO / ERA",
-    "keywords" : "valeo, era, e-motive, devioguida, devio guida, grande punto, fiat, 2005",
+    "categoria" : "ELETTRICO/ELETTRONICO",
     "thumb" : "assets/thumbs/valeo_devioguida_gpunto.webp",
     "titolo" : "Devioguida Valeo in confezione ERA e-Motive",
     "validita" : "Ad Esaurimento",
-    "categoria" : "ELETTRICO/ELETTRONICO"
+    "keywords" : "valeo, era, e-motive, devioguida, devio guida, grande punto, fiat, 2005"
   },
   {
     "note" : "REVOCABILE IN QUALSIASI MOMENTO",
@@ -469,11 +469,11 @@
     "motore" : "Batterie auto",
     "prezzo" : "Pacchetto 12 batterie; prezzi da tabella; omaggio 24 lattine Moretti",
     "marca" : "VARTA",
-    "keywords" : "varta, batterie, batteria, elettrico, c22, d24, e11, d52, e39, f21, moretti, luglio 2026",
+    "categoria" : "ELETTRICO/ELETTRONICO",
     "thumb" : "assets/thumbs/varta_moretti_luglio2026.webp",
     "titolo" : "Pacchetto batterie Varta + omaggio Moretti",
     "validita" : "Ad Esaurimento",
-    "categoria" : "ELETTRICO/ELETTRONICO"
+    "keywords" : "varta, batterie, batteria, elettrico, c22, d24, e11, d52, e39, f21, moretti, luglio 2026"
   },
   {
     "note" : "Nuova riga da aggiungere al catalogo",
@@ -486,11 +486,11 @@
     "motore" : "TUTTI BENZINA E DIESEL ANCHE START%STOP",
     "prezzo" : "PACCHETTO MISTO CON BIRRA OMAGGIO",
     "marca" : "TAB",
-    "keywords" : "BATTERIE, AVVIAMENTO, TAB, 50AH, 60AH, 50EFB, 60EFB, 70EFB, AGM60, AGM70, AGM80",
+    "categoria" : "ELETTRICO/ELETTRONICO",
     "thumb" : "assets/thumbs/tab_batterie_moretti.webp",
     "titolo" : "SUPERFAST BATTERIE TAB",
     "validita" : "Ad Esaurimento",
-    "categoria" : "ELETTRICO/ELETTRONICO"
+    "keywords" : "BATTERIE, AVVIAMENTO, TAB, 50AH, 60AH, 50EFB, 60EFB, 70EFB, AGM60, AGM70, AGM80"
   },
   {
     "note" : "acquistando 5 candelette a 11,95€ cadauna ne ricevi altre 5 a sconto 99% - dimezzando di fatto la spesa - con vero 1+1",
@@ -503,10 +503,10 @@
     "motore" : "225.A2000",
     "prezzo" : "11,65€ netto diviso 2",
     "marca" : "AN-HIDRIA",
-    "keywords" : "uno+uno",
+    "categoria" : "ELETTRICO/ELETTRONICO",
     "thumb" : "assets/thumbs/an-hidria_an119004.png",
     "titolo" : "CANDELETTE 1.3 MJET EURO6",
     "validita" : "Ad Esaurimento",
-    "categoria" : "ELETTRICO/ELETTRONICO"
+    "keywords" : "uno+uno"
   }
 ]

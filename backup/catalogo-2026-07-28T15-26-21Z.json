@@ -593,22 +593,5 @@
     "note" : "",
     "id" : 35,
     "categoria" : "ELETTRICO/ELETTRONICO"
-  },
-  {
-    "prezzo" : "a partire da 53,90€",
-    "immagine" : "assets/img/toplight_457584.png",
-    "codice" : "457584",
-    "applicazione" : "TUTTI I VEICOLI",
-    "attiva" : true,
-    "marca" : "TOPLIGHT",
-    "thumb" : "assets/thumbs/toplight_457584.png",
-    "motore" : "BZ&DS",
-    "titolo" : "LAMPADINE A LED",
-    "keywords" : "LAMPADINE",
-    "validita" : "Ad Esaurimento",
-    "dataAggiornamento" : "2026-07-28",
-    "note" : "",
-    "id" : 36,
-    "categoria" : "ELETTRICO/ELETTRONICO"
   }
 ]

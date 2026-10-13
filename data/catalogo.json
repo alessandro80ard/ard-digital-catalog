@@ -4,7 +4,7 @@
     "validita" : "Ad Esaurimento",
     "categoria" : "FRENANTE",
     "marca" : "BREMBO; BOSCH; DELPHI",
-    "dataAggiornamento" : "2026-09-25",
+    "dataAggiornamento" : "2026-10-13",
     "motore" : "TT",
     "thumb" : "assets/thumbs/brembo_bosch_delphi_0966424597_p23085_lp2276.png",
     "prezzo" : "13,325",
@@ -13,7 +13,7 @@
     "keywords" : "PASTIGLIE FRENO",
     "codice" : "0966424597; P23085; LP2276",
     "id" : 47,
-    "attiva" : true,
+    "attiva" : false,
     "titolo" : "PASTILGLIE FRENO STELLANTIS"
   },
   {

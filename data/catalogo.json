@@ -242,7 +242,7 @@
     "validita" : "Ad Esaurimento",
     "categoria" : "DISTRIBUZIONE",
     "marca" : "GRAF",
-    "dataAggiornamento" : "2026-07-21",
+    "dataAggiornamento" : "2026-10-13",
     "motore" : "199a4000; 350a1000",
     "thumb" : "assets/thumbs/graf_kp1030_2.webp",
     "prezzo" : "37,90€ PER MINIMO 6PZ",
@@ -251,7 +251,7 @@
     "keywords" : "GRAF, Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.2, benzina",
     "codice" : "KP1030-2",
     "id" : 21,
-    "attiva" : true,
+    "attiva" : false,
     "titolo" : "Kit distribuzione KP1030-2"
   },
   {
@@ -259,7 +259,7 @@
     "validita" : "Ad Esaurimento",
     "categoria" : "DISTRIBUZIONE",
     "marca" : "GRAF",
-    "dataAggiornamento" : "2026-07-21",
+    "dataAggiornamento" : "2026-10-13",
     "motore" : "1.6 DIESEL MJET",
     "thumb" : "assets/thumbs/graf_kp1352_5.webp",
     "prezzo" : "69,90€ PER MINIMO 6PZ",
@@ -268,7 +268,7 @@
     "keywords" : "GRAF, Dayco, SKF, distribuzione, fiat, lancia, alfa, 1.6, multijet",
     "codice" : "KP1352-5",
     "id" : 22,
-    "attiva" : true,
+    "attiva" : false,
     "titolo" : "Kit distribuzione KP1352-5"
   },
   {
@@ -276,7 +276,7 @@
     "validita" : "Ad Esaurimento",
     "categoria" : "DISTRIBUZIONE",
     "marca" : "GATES",
-    "dataAggiornamento" : "2026-07-21",
+    "dataAggiornamento" : "2026-10-13",
     "motore" : "1.3 MJET EURO6",
     "thumb" : "assets/thumbs/gates_chk1017ma.webp",
     "prezzo" : "Netto outlet 49,90; per acquisto di almeno 3 pz",
@@ -285,7 +285,7 @@
     "keywords" : "gates, kit catena, distribuzione, CHK1017MA, 1.3 mjet, euro6",
     "codice" : "CHK1017MA",
     "id" : 17,
-    "attiva" : true,
+    "attiva" : false,
     "titolo" : "Kit catena distribuzione Gates CHK1017MA"
   },
   {

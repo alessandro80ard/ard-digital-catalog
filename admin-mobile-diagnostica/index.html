@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="it"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#131316"><meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="description" content="Diagnostica A.R.D. Catalog Builder Mobile — sola lettura">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data: https://promo.autoricambidese.it; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'; upgrade-insecure-requests">
+<title>A.R.D. Catalog Builder · Diagnostica 1.3.1</title>
+<link rel="icon" href="./icons/icon-192.png"><link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="manifest" href="./manifest.webmanifest"><link rel="stylesheet" href="./styles.css">
+</head><body>
+<header class="header"><div class="headinner"><img class="logo" src="./icons/icon-192.png" alt="A.R.D."><div class="heading"><p class="eyebrow">A.R.D. S.R.L. · RICAMBI AUTO</p><h1>Catalog Builder <span>Diagnostica</span></h1><p class="smallmuted">v1.3.1 · Verifica indipendente iPad / iPhone</p></div></div></header>
+<div class="warning" role="status"><strong>VERSIONE DIAGNOSTICA · SOLA LETTURA</strong><p>Non modifica promozioni, non salva bozze, non chiede token e non pubblica nulla. La BETA 1.2 resta invariata.</p></div>
+<main>
+<section class="panel" aria-labelledby="stateheading"><div class="headingrow"><h2 id="stateheading">Stato del collegamento</h2><span id="pill" class="pill waiting">Da verificare</span></div>
+<div id="details" class="results" aria-live="polite"><p>Sto avviando la verifica del catalogo remoto…</p></div>
+<div class="buttonbar"><button id="reload" type="button" class="primary">↻ Verifica di nuovo</button><button id="export" type="button" class="secondary">Esporta diagnostica</button></div>
+<p class="help">Se qualcosa non funziona, verrà mostrato un errore concreto invece di nascondere le promozioni.</p>
+</section>
+<section class="panel" aria-labelledby="filterheading"><div class="headingrow"><h2 id="filterheading">Promozioni lette da GitHub</h2><strong id="count" class="counter">—</strong></div>
+<label for="search" class="searchlabel">Cerca titolo, marca o codice</label><input id="search" type="search" placeholder="Es. CHAMPION, VARTA, 821457" autocomplete="off" disabled>
+<div id="cards" class="cards" aria-live="polite"><p class="empty">Nessun dato ancora caricato. In attesa del controllo GitHub.</p></div>
+</section>
+<section class="panel" aria-labelledby="imageheading"><h2 id="imageheading">Controllo immagini</h2><p class="help">Verifichiamo quattro immagini di promozioni esistenti, inclusa CHAMPION #32. Non altera i file.</p><button id="checkImages" class="secondary" type="button" disabled>Controlla quattro immagini</button><div id="imageResults" class="imageresults" aria-live="polite"></div></section>
+<section class="panel"><h2>Diagnostica tecnica</h2><pre id="log" class="log" aria-live="polite"></pre><p class="help">Qui non vengono registrati password, token o dati personali.</p></section>
+</main><footer>A.R.D. Catalog Builder · Collaudo separato dalla versione BETA 1.2</footer>
+<script src="./app.js" defer></script>
+</body></html>

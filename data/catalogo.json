@@ -1,5 +1,22 @@
 [
   {
+    "id": 51,
+    "immagine": "assets/img/luk_620_3445_00_1793184359989_qkze6f.png",
+    "thumb": "assets/thumbs/luk_620_3445_00_1793184359989_qkze6f.png",
+    "dataAggiornamento": "2026-10-28",
+    "attiva": true,
+    "titolo": "KIT FRIZIONE LUK PER FIAT 1.2/1.4 BZ E 1.3MJET",
+    "categoria": "FRIZIONI",
+    "marca": "LUK",
+    "codice": "620 3445 00",
+    "applicazione": "FIAT - ALFA- LANCIA - CITROEN - PEUGEOT BZ E DIESEL",
+    "motore": "350A1000;199A4000;199B1000",
+    "prezzo": "69,90€",
+    "validita": "Ad Esaurimento",
+    "keywords": "KIT FRIZIONE LUK",
+    "note": "ATTENZIONE VALIDITA’ FINO AD. ESAURIMENTO SCORTE"
+  },
+  {
     "validita": "Ad Esaurimento",
     "prezzo": "13,325",
     "thumb": "assets/thumbs/brembo_bosch_delphi_0966424597_p23085_lp2276.png",

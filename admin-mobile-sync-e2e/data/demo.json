@@ -1,0 +1,22 @@
+{
+  "schema": "ard-sync-e2e-v1",
+  "warning": "DATI FITTIZI. NON E' IL CATALOGO A.R.D. PUBBLICATO.",
+  "promotions": [
+    {
+      "id": 9901,
+      "titolo": "KIT FILTRI - PROMO DIMOSTRATIVA",
+      "marca": "ARD DEMO",
+      "codice": "LAB-9901",
+      "prezzo": "49,90 €/kit",
+      "note": "Consegna standard"
+    },
+    {
+      "id": 9902,
+      "titolo": "BATTERIA - PROMO DIMOSTRATIVA",
+      "marca": "ARD DEMO",
+      "codice": "LAB-9902",
+      "prezzo": "59,90 €/pz",
+      "note": "Solo test"
+    }
+  ]
+}

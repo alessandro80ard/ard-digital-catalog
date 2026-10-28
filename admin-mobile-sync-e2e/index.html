@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow,noarchive">
+<meta name="color-scheme" content="light">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src https://api.github.com; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>A.R.D. · Prova reale di sincronizzazione Mac–iPad</title>
+<link rel="stylesheet" href="./styles.css">
+<script src="./merge-core.js" defer></script>
+<script src="./app.js" defer></script>
+</head>
+<body>
+<div class="ribbon">COLLAUDO END-TO-END · DATI FITTIZI · RAMO GITHUB SEPARATO</div>
+<header class="header">
+  <div class="brand"><span class="mark">A.R.D.<small>RICAMBI AUTO</small></span><span><small class="eyebrow">A.R.D. Digital Catalog</small><h1>Mac <em>↔</em> iPad <span class="lab">LIVE TEST</span></h1></span></div>
+  <span class="pill">Nessun catalogo commerciale</span>
+</header>
+<main>
+<section class="intro">
+ <h2>Due dispositivi. Un archivio GitHub di prova.</h2>
+ <p>Questa pagina legge e scrive <strong>solo</strong> <code>admin-mobile-sync-e2e/data/demo.json</code> sul ramo <code>ard-sync-e2e-20261028</code>. Non modifica <code>main</code> né <code>data/catalogo.json</code>.</p>
+ <div class="info"><strong>Attenzione:</strong> non usare credenziali commerciali. Il token GitHub è richiesto solo al momento della pubblicazione, non viene salvato nel browser e non deve essere condiviso in chat.</div>
+</section>
+<section class="panel">
+ <div class="head"><span class="step">01</span><h2>Collegamento all'archivio di prova</h2></div>
+ <p><strong>Repository:</strong> <code>alessandro80ard/ard-digital-catalog</code><br><strong>Ramo isolato:</strong> <code>ard-sync-e2e-20261028</code></p>
+ <div class="actions"><button id="load" class="btn secondary" type="button">Carica / verifica GitHub</button><button id="discard" class="btn outline" type="button" disabled>Scarta bozza locale</button></div>
+ <p id="status" class="state" role="status">Connessione non ancora verificata.</p>
+ <p id="version" class="small muted"></p>
+</section>
+<section class="panel">
+ <div class="head"><span class="step">02</span><h2>Modifica una promozione DEMO</h2></div>
+ <p>Apri questa stessa pagina su <strong>Mac</strong> e <strong>iPad</strong> prima di effettuare la prima pubblicazione. Ogni dispositivo mantiene la propria bozza locale.</p>
+ <div id="cards" class="cards"><p class="muted">Carica prima i dati di prova.</p></div>
+ <p class="small muted">Le modifiche si salvano automaticamente sul dispositivo. Non vengono inviate finché non premi «Pubblica solo nel ramo TEST».</p>
+</section>
+<section class="panel">
+ <div class="head"><span class="step">03</span><h2>Confronta con GitHub</h2></div>
+ <div class="actions"><button id="compare" class="btn primary" type="button" disabled>Confronta con GitHub</button><button id="apply" class="btn red" type="button" disabled>Prepara fusione locale</button></div>
+ <div id="comparison" class="comparison"><p class="muted">Nessun confronto eseguito.</p></div>
+</section>
+<section class="panel">
+ <div class="head"><span class="step">04</span><h2>Pubblica esclusivamente i dati fittizi</h2></div>
+ <label for="token"><strong>Token GitHub temporaneo</strong> · Contents: Read and Write sul solo repository A.R.D.</label>
+ <div class="tokenrow"><input id="token" type="password" placeholder="Inserisci il PAT solo quando pubblichi" autocomplete="off" autocapitalize="off" spellcheck="false"><button id="publish" type="button" class="btn red" disabled>Pubblica solo nel ramo TEST</button></div>
+ <p class="small muted">Il token non viene memorizzato. Se l'archivio cambia dopo il confronto, la pubblicazione viene bloccata e la bozza resta salvata.</p>
+ <div id="result" class="comparison"></div>
+</section>
+<section class="note"><strong>Limite del test:</strong> è un collaudo reale di due browser/dispositivi attraverso GitHub, ma non utilizza ancora l'app nativa macOS Catalog Builder. Quel collegamento verrà verificato separatamente prima dell'uso operativo.</section>
+</main>
+<footer>A.R.D. · Sync E2E Test · Solo dati dimostrativi · Nessuna modifica commerciale</footer>
+</body>
+</html>

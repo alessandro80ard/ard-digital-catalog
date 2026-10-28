@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#101014">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="description" content="Gestione mobile delle promozioni A.R.D. Digital Catalog">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self'; img-src 'self' data: blob: https://promo.autoricambidese.it https://alessandro80ard.github.io https://raw.githubusercontent.com; connect-src 'self' https://api.github.com; object-src 'none'; base-uri 'self'; form-action 'self'; upgrade-insecure-requests">
+  <title>A.R.D. Catalog Builder Mobile · BETA 1.3.3 TEST</title>
+  <link rel="manifest" href="./manifest.webmanifest">
+  <link rel="icon" href="./icons/icon-192.png">
+  <link rel="apple-touch-icon" href="./icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="test-banner">BETA 1.3.3 · COLLAUDO SEPARATO · NESSUNA PUBBLICAZIONE</div>
+  <header class="topbar">
+    <div class="brand"><img src="./icons/icon-192.png" alt="Icona A.R.D."><div><span class="eyebrow">A.R.D. S.r.l. · Ricambi Auto</span><h1>Catalog Builder <em>1.3.3 TEST</em></h1></div></div>
+    <button id="refreshBtn" class="iconbtn" type="button" title="Ricarica dal repository" aria-label="Ricarica dal repository">↻</button>
+  </header>
+  <div id="bootStatus" role="alert" class="boot-status">Avvio del Catalog Builder 1.3.3 in corso…</div>
+  <main id="app" class="layout" aria-live="polite"></main>
+  <nav class="bottom-nav" aria-label="Navigazione principale">
+    <button class="tab active" type="button" data-tab="catalogo"><span>▦</span>Catalogo</button>
+    <button class="tab" type="button" data-tab="controllo"><span>✓</span>Controllo</button>
+    <button class="tab" type="button" data-tab="pubblica"><span>◷</span>Bozza</button>
+    <button class="tab" type="button" data-tab="diagnostica"><span>⚕</span>Diagnostica</button>
+    <button class="tab" type="button" data-tab="impostazioni"><span>⚙</span>Impostazioni</button>
+  </nav>
+  <dialog id="editDialog" class="edit-dialog" aria-label="Modifica promozione"></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./boot-check.js"></script>
+  <script src="./merge-core.js"></script>
+  <script type="module" src="./app.js"></script>
+</body>
+</html>

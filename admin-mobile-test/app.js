@@ -1,4 +1,4 @@
-// A.R.D. Catalog Builder Mobile — v1.3 BETA: backup bozze + riconciliazione sicura
+// A.R.D. Catalog Builder Mobile — v1.2 BETA
 // Credenziali GitHub: richiesta solo al momento della pubblicazione, usata in memoria,
 // mai memorizzata in localStorage, IndexedDB, service worker o file del progetto.
 // Il push richiede controllo di fast-forward su main (force:false).
@@ -34,13 +34,13 @@ async function stageLoad(){try{const items=await idbUse('readonly',s=>s.getAll()
 async function stageClear(){state.staged.clear();resetImageURLs();try{await idbUse('readwrite',s=>s.clear());}catch{}}
 function imageURL(path){if(!safePath(path))return './icons/icon-192.png';const obj=state.staged.get(path);if(!obj)return publicImage(path);if(state.objectUrls.has(path))return state.objectUrls.get(path);try{const bin=atob(obj.base64);const arr=new Uint8Array(bin.length);for(let i=0;i<bin.length;i++)arr[i]=bin.charCodeAt(i);const url=URL.createObjectURL(new Blob([arr],{type:obj.mime}));state.objectUrls.set(path,url);return url;}catch{return publicImage(path);}}
 function stagedStillUsed(){const wanted=new Set(state.promotions.flatMap(p=>[p.immagine,p.thumb]));return [...state.staged.keys()].every(p=>wanted.has(p));}
-function statusHtml(){const summary=state.dirty?'<div class="notice"><strong>Bozza locale.</strong> Le modifiche restano su questo dispositivo finché non confermi la pubblicazione GitHub. Prima di ricaricare il catalogo, esporta una copia di sicurezza.</div>':'';const msg=state.message?`<div class="notice ${state.error?'error':'success'}">${esc(state.message)}</div>`:'';return summary+msg;}
+function statusHtml(){if(state.dirty)return '<div class="notice"><strong>Bozza di prova.</strong> Le modifiche restano su questo dispositivo e NON cambiano il catalogo online.</div>';if(state.message)return `<div class="notice ${state.error?'error':'success'}">${esc(state.message)}</div>`;return '';}
 function statHtml(){return `<div class="stats"><div class="stat"><strong>${state.promotions.length}</strong><small>Promozioni</small></div><div class="stat"><strong>${state.promotions.filter(p=>p.attiva).length}</strong><small>Attive</small></div><div class="stat"><strong>${state.promotions.filter(p=>!p.attiva).length}</strong><small>Archiviate</small></div></div>`;}
 function render(){for(const b of document.querySelectorAll('.tab'))b.classList.toggle('active',b.dataset.tab===state.tab);
 if(state.loading){root.innerHTML='<div class="section"><h2>Collegamento al catalogo A.R.D.…</h2><p class="muted">Lettura dei dati dal repository GitHub.</p></div>';return;}
 if(state.tab==='catalogo')renderCatalog();else if(state.tab==='controllo')renderValidation();else if(state.tab==='pubblica')renderPublish();else renderSettings();}
 function renderCatalog(){let records=state.promotions.filter(p=>(state.filter==='TUTTE'||p.categoria===state.filter)&&(state.showArchived||p.attiva));const q=state.search.trim().toLowerCase();if(q)records=records.filter(p=>[p.titolo,p.marca,p.codice,p.applicazione,p.motore,p.keywords].join(' ').toLowerCase().includes(q));const reordering= !q && state.filter==='TUTTE' && state.showArchived;
-root.innerHTML=`<section class="hero"><div><h2>Catalog Builder su iPad e iPhone</h2><p>Versione 1.3 BETA · Sincronizzazione controllata</p></div><span class="pill">${state.dirty?'Bozza locale':'Aggiornato'}</span></section>${statHtml()}${statusHtml()}
+root.innerHTML=`<section class="hero"><div><h2>Catalog Builder su iPad e iPhone</h2><p>Versione 1.2 BETA · Pubblicazione solo dopo conferma esplicita</p></div><span class="pill">${state.dirty?'Bozza locale':'Aggiornato'}</span></section>${statHtml()}${statusHtml()}
 <div class="toolbar"><input id="searchPromo" type="search" placeholder="Cerca marca, codice, veicolo…" aria-label="Cerca promozioni" value="${esc(state.search)}"><button class="btn btn-red" data-action="new">+ Nuova promo</button></div>
 <div class="filters"><button class="filter ${state.filter==='TUTTE'?'selected':''}" data-filter="TUTTE">Tutte</button>${CATEGORIES.map(c=>`<button class="filter ${c===state.filter?'selected':''}" data-filter="${esc(c)}">${esc(c)}</button>`).join('')}<button class="filter ${state.showArchived?'selected':''}" data-action="archived">${state.showArchived?'✓ Anche archiviate':'Solo attive'}</button></div>
 <div class="cards">${records.length?records.map(p=>promoHtml(p,reordering)).join(''):'<div class="empty">Nessuna promozione trovata.</div>'}</div><p class="footer-help"><strong>BOZZE:</strong> salvate solo sul dispositivo fino alla pubblicazione confermata. L’ordine si modifica con ↑ e ↓ quando visualizzi tutte le promozioni senza filtri. Le immagini vengono caricate da GitHub e possono richiedere connessione Internet.</p>`;
@@ -50,7 +50,7 @@ function validate(){const issues=[];const ids=new Set();for(const p of state.pro
 function renderValidation(){const issues=validate();root.innerHTML=`<section class="hero"><div><h2>Controllo catalogo</h2><p>Verifica dati prima della pubblicazione</p></div></section>${statusHtml()}<section class="section"><h2>${issues.some(i=>!i.ok)?'Ci sono errori da correggere':issues.length?'Verifica completata con avvisi':'Tutto in ordine'}</h2><div class="checks">${issues.length?issues.map(i=>`<div class="check"><span class="${i.ok?'ok':'bad'}">${i.ok?'!':'✕'}</span><span>${esc(i.text)}</span></div>`).join(''):'<div class="check"><span class="ok">✓</span><span>Nessun ID duplicato e tutti i campi essenziali sono compilati.</span></div>'}</div><p class="footer-help">Questo controllo non può verificare l'esistenza di ogni immagine remota senza scaricare l'intero repository.</p></section>`;}
 function renderPublish(){
  const issues=validate(),errors=issues.filter(i=>!i.ok),r=state.review;
- root.innerHTML=`<section class="hero"><div><h2>Pubblica su GitHub</h2><p>Catalogo A.R.D. · Anteprima obbligatoria e controllo conflitti</p></div><span class="pill">BETA 1.3</span></section>${statusHtml()}
+ root.innerHTML=`<section class="hero"><div><h2>Pubblica su GitHub</h2><p>Catalogo A.R.D. · Anteprima obbligatoria e controllo conflitti</p></div><span class="pill">BETA 1.2</span></section>${statusHtml()}
  <section class="section"><h2>La tua bozza</h2><p><strong>${state.promotions.length} promozioni</strong> · ${state.staged.size} immagini locali in preparazione</p>
  <p>${state.dirty?'Modifiche presenti solo su questo dispositivo.':'Non ci sono modifiche da pubblicare.'}</p>
  ${errors.length?`<div class="notice error">${errors.length} errori: vai nella scheda Controllo.</div>`:''}
@@ -67,17 +67,12 @@ function renderPublish(){
  <input id="githubToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…" aria-label="Token GitHub">
  <label class="small consent"><input id="confirmedPublish" type="checkbox"> Confermo di voler pubblicare le modifiche nel catalogo online dei clienti.</label>
  <button class="btn btn-red" data-action="publish" ${state.busy?'disabled':''}>2. Pubblica modifiche su GitHub</button>
- <p class="footer-help">Se il catalogo è stato modificato dal Mac dopo il salvataggio della bozza, usa «Riconcilia con GitHub» prima di pubblicare. Nessuna sincronizzazione automatica o sovrascrittura forzata.</p>
+ <p class="footer-help">Se il catalogo è stato modificato dal Mac dopo il salvataggio della bozza, la pubblicazione sarà bloccata. Nessuna sincronizzazione automatica o sovrascrittura forzata.</p>
  </section>`:''}
  <section class="section"><h2>Gestione bozza</h2><p>Le bozze sono separate dal catalogo dei clienti.</p>
- <div class="flexgap"><button class="btn btn-light" data-action="export-backup" ${state.busy?'disabled':''}>↓ Esporta copia di sicurezza</button>
- <button class="btn btn-dark" data-action="reconcile" ${!state.dirty||state.busy?'disabled':''}>↻ Riconcilia con GitHub</button>
- <label class="btn btn-light" style="cursor:pointer">↑ Importa backup bozza<input id="importBackup" type="file" accept=".json,application/json" style="display:none"></label>
- <button class="btn btn-light" data-action="reload" ${state.busy?'disabled':''}>Ricarica catalogo da GitHub</button>
- ${state.dirty?'<button class="btn btn-danger" data-action="discard">Elimina bozza</button>':''}</div>
- <p class="footer-help">Riconcilia conserva la bozza e importa gli aggiornamenti GitHub soltanto quando non ci sono conflitti sugli stessi dati. Se entrambi i dispositivi hanno modificato la stessa voce, la procedura si ferma.</p></section>`;
+ <button class="btn btn-light" data-action="reload" ${state.busy?'disabled':''}>Ricarica catalogo da GitHub</button> ${state.dirty?'<button class="btn btn-danger" data-action="discard">Elimina bozza</button>':''}</section>`;
 }
-function renderSettings(){root.innerHTML=`<section class="hero"><div><h2>Impostazioni</h2><p>Catalog Builder Mobile · v1.3 BETA</p></div></section><section class="section"><h2>Catalogo collegato</h2><p><strong>${esc(REPO)}</strong><br><span class="muted small">Branch: ${BRANCH} · GitHub Pages</span></p><p><a href="${PUBLIC_BASE}" target="_blank" rel="noopener noreferrer">Apri il catalogo online ↗</a></p></section><section class="section"><h2>Sicurezza</h2><p>Il token GitHub viene richiesto soltanto quando premi Pubblica e non viene memorizzato in locale. La BETA confronta la versione GitHub prima di pubblicare; puoi anche riconciliare modifiche non sovrapposte. Non memorizziamo il token sul dispositivo.</p><p class="small muted">La pagina resta visibile pubblicamente: non scrivere password o informazioni riservate nelle promozioni.</p></section><section class="section"><h2>Ricarica</h2><p>Ricaricare dal repository elimina la bozza locale: usa questa funzione soltanto se non ti serve più.</p><button class="btn btn-light" data-action="reload">Ricarica catalogo online</button></section>`;}
+function renderSettings(){root.innerHTML=`<section class="hero"><div><h2>Impostazioni</h2><p>Catalog Builder Mobile · v1.2 BETA</p></div></section><section class="section"><h2>Catalogo collegato</h2><p><strong>${esc(REPO)}</strong><br><span class="muted small">Branch: ${BRANCH} · GitHub Pages</span></p><p><a href="${PUBLIC_BASE}" target="_blank" rel="noopener noreferrer">Apri il catalogo online ↗</a></p></section><section class="section"><h2>Sicurezza</h2><p>Il token GitHub viene richiesto soltanto quando premi Pubblica e non viene memorizzato in locale. La versione BETA esegue un controllo del commit corrente prima di pubblicare.</p><p class="small muted">La pagina resta visibile pubblicamente: non scrivere password o informazioni riservate nelle promozioni.</p></section><section class="section"><h2>Ricarica</h2><p>Ricaricare dal repository elimina la bozza locale: usa questa funzione soltanto se non ti serve più.</p><button class="btn btn-light" data-action="reload">Ricarica catalogo online</button></section>`;}
 function editDialog(p=null){editingImage=null;const fresh=!p;const promo=p||{id:Math.max(0,...state.promotions.map(x=>x.id))+1,titolo:'',categoria:'PROMO GENERALI',marca:'',codice:'',applicazione:'',motore:'',prezzo:'',validita:'Ad Esaurimento',keywords:'',note:'',attiva:true,immagine:'',thumb:'',dataAggiornamento:today()};
  dialog.innerHTML=`<div class="edit-head"><h2>${fresh?'Nuova promozione':'Modifica promozione #'+esc(promo.id)}</h2><button type="button" data-action="close-dialog" aria-label="Chiudi">×</button></div><form id="promoForm"><div class="edit-content"><label class="small" for="promoImage">Immagine promozione</label>${!fresh?`<img id="promoPreview" class="preview-image" src="${esc(imageURL(promo.immagine))}" alt="Anteprima promozione">`:'<img id="promoPreview" class="preview-image" src="./icons/icon-192.png" alt="Anteprima immagine">'}<input id="promoImage" type="file" accept="image/*"><p class="footer-help">Da Foto o File • elaborazione sul dispositivo • immagine max 1800 px, miniatura max 520 px</p><div class="form-grid">${FIELDS.map(field=>{
   const val=promo[field]??'';const title=({titolo:'Titolo',categoria:'Categoria',marca:'Marca',codice:'Codice articolo',applicazione:'Applicazione / veicolo',motore:'Motore',prezzo:'Prezzo / promozione',validita:'Validità',keywords:'Parole chiave',note:'Note'})[field];return `<label class="${['titolo','applicazione','keywords','note'].includes(field)?'full':''}">${title}${field==='categoria'?`<select name="${field}">${CATEGORIES.map(c=>`<option value="${esc(c)}" ${val===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:field==='note'?`<textarea name="note">${esc(val)}</textarea>`:`<input name="${field}" value="${esc(val)}" ${['titolo','marca','codice'].includes(field)?'required':''}>`}</label>`;}).join('')}<label class="full" style="flex-direction:row;align-items:center"><input type="checkbox" name="attiva" style="width:auto" ${promo.attiva?'checked':''}> Promozione attiva</label></div></div><div class="edit-bottom"><button type="button" class="btn btn-light" data-action="close-dialog">Annulla</button><button type="submit" class="btn btn-red" id="savePromoBtn">Salva bozza</button></div></form>`;
@@ -221,133 +216,8 @@ async function publishSucceeded(sha){
  state.error=false;state.message=`Pubblicazione inviata a GitHub con successo (commit ${sha.slice(0,9)}). La pagina potrebbe aggiornarsi dopo qualche minuto. Ricarica il catalogo dal repository prima di nuove modifiche.`;
  state.tab='pubblica';toast('GitHub aggiornato!');
 }
-
-// VERSIONE 1.3 — export completo della bozza per trasferimento/backup. Mai includere credenziali.
-async function exportBackup(){
- if(!state.promotions.length){toast('Non ci sono promozioni da esportare.');return;}
- const pack={format:'ARD-CATALOG-BUILDER-BACKUP',version:1,created:new Date().toISOString(),repo:REPO,
-  promotions:state.promotions,baseHead:state.baseHead,baseTree:state.baseTree,indexHTML:state.indexHTML,
-  images:[...state.staged].map(([path,asset])=>({path,mime:asset.mime,base64:asset.base64}))};
- const blob=new Blob([JSON.stringify(pack)],{type:'application/json'});
- const fileName='ARD-Catalog-Backup-'+today()+'.json';
- try{
-  const file=new File([blob],fileName,{type:'application/json'});
-  if(navigator.canShare?.({files:[file]})&&navigator.share){await navigator.share({files:[file],title:'Backup bozza Catalog Builder A.R.D.'});return;}
- }catch(e){if(e?.name==='AbortError')return;}
- const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=fileName;
- document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),4000);
- toast('Copia di sicurezza creata. Conservala nell’app File.');
-}
-
-// Importa un backup da File senza perdere nulla finché ogni campo e immagine è verificato.
-async function importBackup(file){
- if(!file||state.busy)return;
- if(file.size>30_000_000){toast('Backup troppo grande (massimo 30 MB).');return;}
- state.busy=true;
- try{
-  const data=JSON.parse(await file.text());
-  if(data?.format!=='ARD-CATALOG-BUILDER-BACKUP'||data.version!==1||data.repo!==REPO||
-   !Array.isArray(data.promotions)||data.promotions.length>500||!data.promotions.length||
-   typeof data.indexHTML!=='string'||!Array.isArray(data.images)||data.images.length>100||
-   !/^[a-f0-9]{40}$/.test(data.baseHead)||!/^[a-f0-9]{40}$/.test(data.baseTree))throw new Error('Backup A.R.D. non valido.');
-  const ids=new Set();
-  for(const p of data.promotions){
-   if(!Number.isSafeInteger(p.id)||ids.has(p.id)||!safePath(p.immagine)||!safePath(p.thumb)||
-    typeof p.titolo!=='string'||typeof p.marca!=='string'||typeof p.codice!=='string')throw new Error('Il backup contiene una promozione non valida.');
-   ids.add(p.id);
-  }
-  locateEmbeddedJSON(data.indexHTML);
-  let totalBytes=0;const files=[];
-  for(const a of data.images){
-   if(!safePath(a.path)||!/^image\/(?:png|jpeg|webp)$/.test(a.mime)||typeof a.base64!=='string'||
-    !/^[a-zA-Z0-9+/]*={0,2}$/.test(a.base64)||a.base64.length>13_000_000)throw new Error('Il backup contiene un’immagine non valida.');
-   totalBytes+=a.base64.length;if(totalBytes>26_000_000)throw new Error('Le immagini del backup sono troppo grandi.');
-   files.push(a);
-  }
-  if(!confirm('Importare questo backup? Sostituirà la bozza e le immagini salvate su questo dispositivo. Esporta prima la bozza attuale se ti serve.'))return;
-  const db=await dbOpen();
-  try{await new Promise((resolve,reject)=>{
-    const tx=db.transaction('files','readwrite');const store=tx.objectStore('files');store.clear();
-    for(const f of files)store.put({path:f.path,mime:f.mime,base64:f.base64});
-    tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error||new Error('Impossibile salvare le immagini del backup.'));tx.onabort=()=>reject(tx.error||new Error('Importazione annullata.'));
-   });}finally{db.close();}
-  resetImageURLs();state.staged=new Map(files.map(x=>[x.path,{mime:x.mime,base64:x.base64}]));
-  state.promotions=data.promotions;state.baseHead=data.baseHead;state.baseTree=data.baseTree;
-  state.indexHTML=data.indexHTML;state.review=null;state.dirty=true;state.error=false;state.needsReload=false;
-  state.message='Bozza importata. Verifica o riconcilia con GitHub prima di pubblicare.';
-  persistDraft();toast('Backup importato: nessuna pubblicazione effettuata.');
- }catch(e){state.error=true;state.message='Importazione non completata: '+e.message;toast('Importazione non riuscita.');}
- finally{state.busy=false;render();}
-}
-
-// Unisce soltanto modifiche non in conflitto, partendo da vecchio, bozza locale e GitHub attuale.
-// Nessun commit/push durante la riconciliazione. Ogni voce mantiene il proprio ID.
-function mergeUnrelated(base,local,remote){
- const byId=items=>new Map(items.map(p=>[p.id,p]));
- const oldMap=byId(base),locMap=byId(local),remMap=byId(remote),errors=[];
- const originalIDs=new Set(base.map(p=>p.id));
- const orderPreserved=items=>{
-  const ids=items.filter(p=>originalIDs.has(p.id)).map(p=>p.id);
-  const set=new Set(ids);
-  const baseOrder=base.filter(p=>set.has(p.id)).map(p=>p.id);
-  return JSON.stringify(ids)===JSON.stringify(baseOrder);
- };
- if(!orderPreserved(local)||!orderPreserved(remote))errors.push('L’ordine delle promozioni è stato modificato: riconciliazione manuale necessaria.');
- const merged=remote.map(p=>({...p}));const mergedMap=byId(merged);const newLocal=[];
- for(const item of local){
-  const old=oldMap.get(item.id),latest=remMap.get(item.id);
-  if(!old){if(latest)errors.push(`#${item.id}: ID aggiunto su entrambi i dispositivi.`);else newLocal.push({...item});continue;}
-  if(!latest){if(JSON.stringify(item)!==JSON.stringify(old))errors.push(`#${item.id}: modificata sull’iPad ma eliminata su GitHub.`);continue;}
-  const keys=[...new Set([...Object.keys(old),...Object.keys(item)])];
-  for(const field of keys){
-   const earlier=JSON.stringify(old[field]),mine=JSON.stringify(item[field]),online=JSON.stringify(latest[field]);
-   if(mine===earlier)continue;
-   if(online!==earlier&&online!==mine){errors.push(`#${item.id}: campo «${field}» modificato sia su Mac/GitHub che su iPad.`);continue;}
-   mergedMap.get(item.id)[field]=item[field];
-  }
- }
- for(const old of base){
-  if(locMap.has(old.id))continue;
-  const now=remMap.get(old.id);
-  if(now&&JSON.stringify(now)!==JSON.stringify(old))errors.push(`#${old.id}: eliminata su iPad ma modificata su GitHub.`);
-  if(now){const n=merged.findIndex(p=>p.id===old.id);if(n>=0)merged.splice(n,1);}
- }
- for(const p of newLocal)merged.unshift(p);
- return {merged,errors};
-}
-
-async function reconcileDraft(){
- if(!state.dirty||state.busy)return;
- if(!confirm('Riconciliare la bozza con l’ultima versione GitHub? Non verrà pubblicato nulla. Se possibile, esporta prima un backup della bozza.'))return;
- state.busy=true;state.message='Confronto la bozza con GitHub…';state.error=false;render();
- try{
-  const current=await currentRef();
-  if(current===state.baseHead){state.message='La bozza è già basata sull’ultima versione GitHub. Puoi fare «Verifica modifiche e conflitti».';return;}
-  const [previous,newData,newHTML,commit]=await Promise.all([
-   api(`/contents/data/catalogo.json?ref=${encodeURIComponent(state.baseHead)}`),
-   api(`/contents/data/catalogo.json?ref=${encodeURIComponent(current)}`),
-   api(`/contents/index.html?ref=${encodeURIComponent(current)}`),
-   api(`/git/commits/${current}`)
-  ]);
-  const before=JSON.parse(decodeGitHubBase64(previous.content));
-  const latest=JSON.parse(decodeGitHubBase64(newData.content));
-  const html=decodeGitHubBase64(newHTML.content);
-  if(!Array.isArray(before)||!Array.isArray(latest)||JSON.stringify(locateEmbeddedJSON(state.indexHTML).data)!==JSON.stringify(before)||JSON.stringify(locateEmbeddedJSON(html).data)!==JSON.stringify(latest))
-   throw new Error('Il catalogo JSON e la pagina HTML non sono coerenti. Nessuna modifica applicata.');
-  const result=mergeUnrelated(before,state.promotions,latest);
-  if(result.errors.length)throw new Error('RICONCILIAZIONE BLOCCATA: '+result.errors.slice(0,4).join(' ')+' La bozza è ancora conservata.');
-  if((await currentRef())!==current)throw new Error('GitHub è cambiato durante il controllo. Riprova: la bozza è conservata.');
-  if(!confirm('Nessun conflitto sui dati modificati. Integrare gli aggiornamenti GitHub nella bozza, senza pubblicare nulla?'))return;
-  state.promotions=result.merged;state.baseHead=current;state.baseTree=commit.tree.sha;state.indexHTML=html;
-  state.dirty=true;state.review=null;state.originalLength=latest.length;
-  persistDraft();state.message='Bozza riconciliata senza conflitti. Ora premi «Verifica modifiche e conflitti». Nessuna pubblicazione eseguita.';
-  state.error=false;toast('Bozza riconciliata con GitHub.');
- }catch(e){state.error=true;state.message=e.message;toast('Riconciliazione fermata: bozza al sicuro.');}
- finally{state.busy=false;render();}
-}
-
 async function discard(){if(!state.dirty)return;await loadRemote(false);}
-root.addEventListener('click',async event=>{const b=event.target.closest('[data-action],[data-filter]');if(!b||state.busy)return;if(b.dataset.filter){state.filter=b.dataset.filter;render();return;}const action=b.dataset.action;if(state.needsReload&&['edit','new','toggle','up','down'].includes(action)){toast('Ricarica prima da GitHub per modificare nuovamente.');return;}const id=Number(b.dataset.id);const p=state.promotions.find(x=>x.id===id);switch(action){case'new':editDialog();break;case'edit':if(p)editDialog(p);break;case'toggle':if(p){p.attiva=!p.attiva;p.dataAggiornamento=today();dirty();}break;case'up':case'down':{let i=state.promotions.findIndex(x=>x.id===id);let j=i+(action==='up'?-1:1);if(i<0||j<0||j>=state.promotions.length)return;[state.promotions[i],state.promotions[j]]=[state.promotions[j],state.promotions[i]];dirty();break;}case'archived':state.showArchived=!state.showArchived;render();break;case'discard':await discard();break;case'reload':await loadRemote();break;case'preflight':await preflight();break;case'export-backup':await exportBackup();break;case'reconcile':await reconcileDraft();break;case'publish':await publishNow();break;}});
+root.addEventListener('click',async event=>{const b=event.target.closest('[data-action],[data-filter]');if(!b||state.busy)return;if(b.dataset.filter){state.filter=b.dataset.filter;render();return;}const action=b.dataset.action;if(state.needsReload&&['edit','new','toggle','up','down'].includes(action)){toast('Ricarica prima da GitHub per modificare nuovamente.');return;}const id=Number(b.dataset.id);const p=state.promotions.find(x=>x.id===id);switch(action){case'new':editDialog();break;case'edit':if(p)editDialog(p);break;case'toggle':if(p){p.attiva=!p.attiva;p.dataAggiornamento=today();dirty();}break;case'up':case'down':{let i=state.promotions.findIndex(x=>x.id===id);let j=i+(action==='up'?-1:1);if(i<0||j<0||j>=state.promotions.length)return;[state.promotions[i],state.promotions[j]]=[state.promotions[j],state.promotions[i]];dirty();break;}case'archived':state.showArchived=!state.showArchived;render();break;case'discard':await discard();break;case'reload':await loadRemote();break;case'preflight':await preflight();break;case'publish':await publishNow();break;}});
 root.addEventListener('input',event=>{if(event.target.id==='searchPromo'){const input=event.target;const i=input.selectionStart;state.search=input.value;render();const next=document.getElementById('searchPromo');next?.focus();next?.setSelectionRange(i,i);}});
 
 dialog.addEventListener('click',event=>{if(event.target.closest('[data-action="close-dialog"]'))closeDialog();});

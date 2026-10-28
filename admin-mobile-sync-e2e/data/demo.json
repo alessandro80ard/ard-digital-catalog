@@ -1,1 +1,22 @@
-{"schema":"ard-sync-e2e-v1","warning":"DATI FITTIZI. NON E' IL CATALOGO A.R.D. PUBBLICATO.","promotions":[{"id":9901,"marca":"ARD DEMO","prezzo":"44,90 €\/kit","titolo":"KIT FILTRI - PROMO DIMOSTRATIVA","codice":"LAB-9901","note":"TEST MAC 1.6 - Sincronizzazione riuscita"},{"id":9902,"marca":"ARD DEMO","prezzo":"54,90 €\/pz","titolo":"BATTERIA - PROMO DIMOSTRATIVA","codice":"LAB-9902","note":"Solo test"}]}
+{
+  "schema": "ard-sync-e2e-v1",
+  "warning": "DATI FITTIZI. NON E' IL CATALOGO A.R.D. PUBBLICATO.",
+  "promotions": [
+    {
+      "id": 9901,
+      "marca": "ARD DEMO",
+      "prezzo": "44,90 €/kit",
+      "titolo": "KIT FILTRI - PROMO DIMOSTRATIVA",
+      "codice": "LAB-9901",
+      "note": "TEST MAC 1.6 - Sincronizzazione riuscita"
+    },
+    {
+      "id": 9902,
+      "marca": "ARD DEMO",
+      "prezzo": "54,90 €/pz",
+      "titolo": "BATTERIA - PROMO DIMOSTRATIVA",
+      "codice": "LAB-9902",
+      "note": "TEST IPAD 1.6 - Ritorno al Mac"
+    }
+  ]
+}

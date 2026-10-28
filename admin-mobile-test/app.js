@@ -1,14 +1,16 @@
-// A.R.D. Catalog Builder Mobile — v1.1 TEST, senza pubblicazione
-// VERSIONE DI COLLAUDO: nessuna credenziale e nessuna scrittura verso GitHub.
+// A.R.D. Catalog Builder Mobile — v1.2 BETA
+// Credenziali GitHub: richiesta solo al momento della pubblicazione, usata in memoria,
+// mai memorizzata in localStorage, IndexedDB, service worker o file del progetto.
+// Il push richiede controllo di fast-forward su main (force:false).
 const REPO='alessandro80ard/ard-digital-catalog';
-const TEST_MODE=true;
+const TEST_MODE=false;
 const BRANCH='main';
 const API=`https://api.github.com/repos/${REPO}`;
 const PUBLIC_BASE='https://promo.autoricambidese.it/';
 const FIELDS=['titolo','categoria','marca','codice','applicazione','motore','prezzo','validita','keywords','note'];
 const CATEGORIES=['FILTRI','FRENANTE','FRIZIONI','DISTRIBUZIONE','LUBRIFICANTI','PRODOTTI TECNICI','ELETTRICO/ELETTRONICO','ATTREZZATURE','PROMO GENERALI'];
 const DRAFT_KEY='ardBuilderMobile.test.v1_1.draft';
-const state={tab:'catalogo',promotions:[],baseHead:null,baseTree:null,indexHTML:null,search:'',filter:'TUTTE',showArchived:true,dirty:false,loading:false,message:'',error:false,staged:new Map(),objectUrls:new Map()};
+const state={tab:'catalogo',promotions:[],baseHead:null,baseTree:null,indexHTML:null,search:'',filter:'TUTTE',showArchived:true,dirty:false,loading:false,busy:false,review:null,publishedSha:null,needsReload:false,message:'',error:false,staged:new Map(),objectUrls:new Map()};
 const root=document.getElementById('app');
 const dialog=document.getElementById('editDialog');
 const toastEl=document.getElementById('toast');
@@ -20,7 +22,7 @@ function today(){const d=new Date();return [d.getFullYear(),String(d.getMonth()+
 function safePath(path){return typeof path==='string' && /^assets\/(img|thumbs)\/[^/\\]+$/.test(path) && !path.includes('..') && !/[\u0000-\u001f]/.test(path);}
 function publicImage(path){return safePath(path)?PUBLIC_BASE+path.split('/').map(encodeURIComponent).join('/')+(state.baseHead?'?rev='+encodeURIComponent(state.baseHead.slice(0,12)):''):'';}
 function toast(message){toastEl.textContent=message;toastEl.classList.add('visible');clearTimeout(toastTimeout);toastTimeout=setTimeout(()=>toastEl.classList.remove('visible'),4000);}
-function dirty(){state.dirty=true;persistDraft();render();}
+function dirty(){state.dirty=true;state.review=null;persistDraft();render();}
 function persistDraft(){try{localStorage.setItem(DRAFT_KEY,JSON.stringify({promotions:state.promotions,baseHead:state.baseHead,baseTree:state.baseTree,indexHTML:state.indexHTML,updated:Date.now()}));}catch{toast('Spazio insufficiente per salvare la bozza locale.');}}
 function clearDraft(){localStorage.removeItem(DRAFT_KEY);}
 function draftRestore(){try{const d=JSON.parse(localStorage.getItem(DRAFT_KEY)||'null');if(d&&Array.isArray(d.promotions)&&d.baseHead&&d.baseTree&&typeof d.indexHTML==='string'){state.promotions=d.promotions;state.baseHead=d.baseHead;state.baseTree=d.baseTree;state.indexHTML=d.indexHTML;state.dirty=true;state.error=false;state.message='Bozza locale recuperata. Controlla le modifiche prima di pubblicare.';return true;}}catch{}return false;}
@@ -36,20 +38,41 @@ function statusHtml(){if(state.dirty)return '<div class="notice"><strong>Bozza d
 function statHtml(){return `<div class="stats"><div class="stat"><strong>${state.promotions.length}</strong><small>Promozioni</small></div><div class="stat"><strong>${state.promotions.filter(p=>p.attiva).length}</strong><small>Attive</small></div><div class="stat"><strong>${state.promotions.filter(p=>!p.attiva).length}</strong><small>Archiviate</small></div></div>`;}
 function render(){for(const b of document.querySelectorAll('.tab'))b.classList.toggle('active',b.dataset.tab===state.tab);
 if(state.loading){root.innerHTML='<div class="section"><h2>Collegamento al catalogo A.R.D.…</h2><p class="muted">Lettura dei dati dal repository GitHub.</p></div>';return;}
-if(state.tab==='catalogo')renderCatalog();else if(state.tab==='controllo')renderValidation();else if(state.tab==='pubblica')renderTest();else renderSettings();}
+if(state.tab==='catalogo')renderCatalog();else if(state.tab==='controllo')renderValidation();else if(state.tab==='pubblica')renderPublish();else renderSettings();}
 function renderCatalog(){let records=state.promotions.filter(p=>(state.filter==='TUTTE'||p.categoria===state.filter)&&(state.showArchived||p.attiva));const q=state.search.trim().toLowerCase();if(q)records=records.filter(p=>[p.titolo,p.marca,p.codice,p.applicazione,p.motore,p.keywords].join(' ').toLowerCase().includes(q));const reordering= !q && state.filter==='TUTTE' && state.showArchived;
-root.innerHTML=`<section class="hero"><div><h2>Catalog Builder su iPad e iPhone</h2><p>Versione di collaudo 1.1 · Nessuna modifica al catalogo online</p></div><span class="pill">${state.dirty?'Bozza locale':'Solo prova'}</span></section>${statHtml()}${statusHtml()}
+root.innerHTML=`<section class="hero"><div><h2>Catalog Builder su iPad e iPhone</h2><p>Versione 1.2 BETA · Pubblicazione solo dopo conferma esplicita</p></div><span class="pill">${state.dirty?'Bozza locale':'Aggiornato'}</span></section>${statHtml()}${statusHtml()}
 <div class="toolbar"><input id="searchPromo" type="search" placeholder="Cerca marca, codice, veicolo…" aria-label="Cerca promozioni" value="${esc(state.search)}"><button class="btn btn-red" data-action="new">+ Nuova promo</button></div>
 <div class="filters"><button class="filter ${state.filter==='TUTTE'?'selected':''}" data-filter="TUTTE">Tutte</button>${CATEGORIES.map(c=>`<button class="filter ${c===state.filter?'selected':''}" data-filter="${esc(c)}">${esc(c)}</button>`).join('')}<button class="filter ${state.showArchived?'selected':''}" data-action="archived">${state.showArchived?'✓ Anche archiviate':'Solo attive'}</button></div>
-<div class="cards">${records.length?records.map(p=>promoHtml(p,reordering)).join(''):'<div class="empty">Nessuna promozione trovata.</div>'}</div><p class="footer-help"><strong>MODALITÀ TEST:</strong> non è possibile pubblicare su GitHub. L’ordine si modifica con ↑ e ↓ quando visualizzi tutte le promozioni senza filtri. Le immagini vengono caricate da GitHub e possono richiedere connessione Internet.</p>`;
+<div class="cards">${records.length?records.map(p=>promoHtml(p,reordering)).join(''):'<div class="empty">Nessuna promozione trovata.</div>'}</div><p class="footer-help"><strong>BOZZE:</strong> salvate solo sul dispositivo fino alla pubblicazione confermata. L’ordine si modifica con ↑ e ↓ quando visualizzi tutte le promozioni senza filtri. Le immagini vengono caricate da GitHub e possono richiedere connessione Internet.</p>`;
 }
 function promoHtml(p,canReorder){const pos=state.promotions.findIndex(x=>x.id===p.id);return `<article class="promo"><img loading="lazy" src="${esc(imageURL(p.thumb||p.immagine))}" alt="Immagine ${esc(p.titolo)}"><div class="promo-body"><div class="promo-top"><span class="pill ${p.attiva?'active':'inactive'}">${p.attiva?'ATTIVA':'ARCHIVIATA'}</span><small class="muted">#${esc(p.id)}</small></div><h3>${esc(p.titolo)}</h3><p><strong>${esc(p.marca)}</strong> · ${esc(p.codice)}</p><p>${esc(p.categoria)}</p>${p.prezzo?`<p class="price">${esc(p.prezzo)}</p>`:''}<div class="actions"><button class="btn btn-dark btn-sm" data-action="edit" data-id="${p.id}">Modifica</button><button class="btn btn-light btn-sm" data-action="toggle" data-id="${p.id}">${p.attiva?'Archivia':'Riattiva'}</button>${canReorder?`<button class="order-btn" data-action="up" data-id="${p.id}" aria-label="Sposta in alto" ${pos===0?'disabled':''}>↑</button><button class="order-btn" data-action="down" data-id="${p.id}" aria-label="Sposta in basso" ${pos===state.promotions.length-1?'disabled':''}>↓</button>`:''}</div></div></article>`;}
 function validate(){const issues=[];const ids=new Set();for(const p of state.promotions){if(ids.has(p.id))issues.push({ok:false,text:`ID duplicato: ${p.id}`});ids.add(p.id);if(!p.titolo?.trim()||!p.marca?.trim()||!p.codice?.trim())issues.push({ok:false,text:`Promo #${p.id}: titolo, marca o codice mancante`});if(!safePath(p.immagine)||!safePath(p.thumb))issues.push({ok:false,text:`Promo #${p.id}: percorso immagine o miniatura non valido`});if(!CATEGORIES.includes(p.categoria))issues.push({ok:true,text:`Promo #${p.id}: categoria fuori elenco (${p.categoria})`});}if(!stagedStillUsed())issues.push({ok:true,text:'Sono presenti immagini preparate ma non più usate dalle promozioni (non verranno pubblicate).'});return issues;}
 function renderValidation(){const issues=validate();root.innerHTML=`<section class="hero"><div><h2>Controllo catalogo</h2><p>Verifica dati prima della pubblicazione</p></div></section>${statusHtml()}<section class="section"><h2>${issues.some(i=>!i.ok)?'Ci sono errori da correggere':issues.length?'Verifica completata con avvisi':'Tutto in ordine'}</h2><div class="checks">${issues.length?issues.map(i=>`<div class="check"><span class="${i.ok?'ok':'bad'}">${i.ok?'!':'✕'}</span><span>${esc(i.text)}</span></div>`).join(''):'<div class="check"><span class="ok">✓</span><span>Nessun ID duplicato e tutti i campi essenziali sono compilati.</span></div>'}</div><p class="footer-help">Questo controllo non può verificare l'esistenza di ogni immagine remota senza scaricare l'intero repository.</p></section>`;}
-function renderTest(){const issues=validate();const bad=issues.filter(i=>!i.ok);root.innerHTML=`<section class="hero"><div><h2>Bozza di prova</h2><p>Proviamo senza toccare GitHub o il catalogo online</p></div><span class="pill">TEST</span></section>${statusHtml()}
-<section class="section"><h2>Stato della bozza</h2><p><strong>${state.promotions.length} promozioni</strong> · ${state.staged.size} immagini locali in preparazione</p><p class="muted">${state.dirty?'Hai modifiche salvate solo su questo dispositivo.':'Non hai ancora effettuato modifiche di prova.'}</p>${bad.length?`<div class="notice error">${bad.length} errori da correggere.</div>`:''}</section>
-<section class="section"><h2>Pubblicazione disattivata</h2><div class="notice">Questa versione non accetta token GitHub, non esegue commit e non modifica file online. Se cambi un'immagine o una descrizione, resta soltanto una bozza di test sul tuo iPad/iPhone.</div><button class="btn btn-light" data-action="discard" ${!state.dirty?'disabled':''}>Elimina bozza e ricarica da GitHub</button></section>`;}
-function renderSettings(){root.innerHTML=`<section class="hero"><div><h2>Impostazioni</h2><p>Catalog Builder Mobile · v1.1 TEST</p></div></section><section class="section"><h2>Catalogo collegato</h2><p><strong>${esc(REPO)}</strong><br><span class="muted small">Branch: ${BRANCH} · Lettura pubblica dal repository</span></p><p><a href="${PUBLIC_BASE}" target="_blank" rel="noopener noreferrer">Apri il catalogo online ↗</a></p></section><section class="section"><h2>Sicurezza della prova</h2><p>Questa PWA non contiene funzioni di scrittura su GitHub e non richiede né memorizza token o password. Le bozze sono memorizzate soltanto su questo dispositivo.</p><p class="small muted">La pagina di test, se ospitata su GitHub Pages, è pubblicamente raggiungibile: non aggiungere dati aziendali riservati.</p></section><section class="section"><h2>Ricarica</h2><p>Attenzione: ricaricare dal repository cancella la bozza locale di prova.</p><button class="btn btn-light" data-action="reload">Ricarica catalogo online</button></section>`;}
+function renderPublish(){
+ const issues=validate(),errors=issues.filter(i=>!i.ok),r=state.review;
+ root.innerHTML=`<section class="hero"><div><h2>Pubblica su GitHub</h2><p>Catalogo A.R.D. · Anteprima obbligatoria e controllo conflitti</p></div><span class="pill">BETA 1.2</span></section>${statusHtml()}
+ <section class="section"><h2>La tua bozza</h2><p><strong>${state.promotions.length} promozioni</strong> · ${state.staged.size} immagini locali in preparazione</p>
+ <p>${state.dirty?'Modifiche presenti solo su questo dispositivo.':'Non ci sono modifiche da pubblicare.'}</p>
+ ${errors.length?`<div class="notice error">${errors.length} errori: vai nella scheda Controllo.</div>`:''}
+ <button class="btn btn-dark" data-action="preflight" ${!state.dirty||errors.length||state.busy?'disabled':''}>1. Verifica modifiche e conflitti</button>
+ ${state.busy?'<p class="notice">Operazione in corso. Non chiudere questa finestra.</p>':''}
+ </section>
+ ${r?`<section class="section"><h2>Anteprima della pubblicazione</h2>
+ <p><strong>${r.changed.length}</strong> promozioni modificate · <strong>${r.added.length}</strong> aggiunte · <strong>${r.deleted.length}</strong> eliminate · <strong>${r.assets.length}</strong> nuovi file immagine</p>
+ <div class="checks">${[...r.changed.map(x=>`#${x.id} · ${x.titolo} (${x.fields.join(', ')})`),...r.added.map(x=>`Nuova: #${x.id} · ${x.titolo}`),...r.deleted.map(x=>`Eliminata: #${x.id} · ${x.titolo}`)].map(s=>`<div class="check"><span class="ok">•</span><span>${esc(s)}</span></div>`).join('')}</div>
+ <p class="small muted">Verranno aggiornati insieme <code>data/catalogo.json</code> e <code>index.html</code>, oltre alle immagini nuove. Non verranno cancellate quelle precedenti.</p></section>
+ <section class="section"><h2>Autorizza la pubblicazione</h2>
+ <div class="notice">Il sito GitHub Pages è pubblico. Inserisci un <strong>fine-grained personal access token</strong> limitato a questo repository e con permesso <strong>Contents: Read and write</strong>, con scadenza breve. Il token non viene salvato né ricordato dall’app.</div>
+ <label for="githubToken" class="small"><strong>Token GitHub temporaneo</strong></label>
+ <input id="githubToken" type="password" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="github_pat_…" aria-label="Token GitHub">
+ <label class="small consent"><input id="confirmedPublish" type="checkbox"> Confermo di voler pubblicare le modifiche nel catalogo online dei clienti.</label>
+ <button class="btn btn-red" data-action="publish" ${state.busy?'disabled':''}>2. Pubblica modifiche su GitHub</button>
+ <p class="footer-help">Se il catalogo è stato modificato dal Mac dopo il salvataggio della bozza, la pubblicazione sarà bloccata. Nessuna sincronizzazione automatica o sovrascrittura forzata.</p>
+ </section>`:''}
+ <section class="section"><h2>Gestione bozza</h2><p>Le bozze sono separate dal catalogo dei clienti.</p>
+ <button class="btn btn-light" data-action="reload" ${state.busy?'disabled':''}>Ricarica catalogo da GitHub</button> ${state.dirty?'<button class="btn btn-danger" data-action="discard">Elimina bozza</button>':''}</section>`;
+}
+function renderSettings(){root.innerHTML=`<section class="hero"><div><h2>Impostazioni</h2><p>Catalog Builder Mobile · v1.2 BETA</p></div></section><section class="section"><h2>Catalogo collegato</h2><p><strong>${esc(REPO)}</strong><br><span class="muted small">Branch: ${BRANCH} · GitHub Pages</span></p><p><a href="${PUBLIC_BASE}" target="_blank" rel="noopener noreferrer">Apri il catalogo online ↗</a></p></section><section class="section"><h2>Sicurezza</h2><p>Il token GitHub viene richiesto soltanto quando premi Pubblica e non viene memorizzato in locale. La versione BETA esegue un controllo del commit corrente prima di pubblicare.</p><p class="small muted">La pagina resta visibile pubblicamente: non scrivere password o informazioni riservate nelle promozioni.</p></section><section class="section"><h2>Ricarica</h2><p>Ricaricare dal repository elimina la bozza locale: usa questa funzione soltanto se non ti serve più.</p><button class="btn btn-light" data-action="reload">Ricarica catalogo online</button></section>`;}
 function editDialog(p=null){editingImage=null;const fresh=!p;const promo=p||{id:Math.max(0,...state.promotions.map(x=>x.id))+1,titolo:'',categoria:'PROMO GENERALI',marca:'',codice:'',applicazione:'',motore:'',prezzo:'',validita:'Ad Esaurimento',keywords:'',note:'',attiva:true,immagine:'',thumb:'',dataAggiornamento:today()};
  dialog.innerHTML=`<div class="edit-head"><h2>${fresh?'Nuova promozione':'Modifica promozione #'+esc(promo.id)}</h2><button type="button" data-action="close-dialog" aria-label="Chiudi">×</button></div><form id="promoForm"><div class="edit-content"><label class="small" for="promoImage">Immagine promozione</label>${!fresh?`<img id="promoPreview" class="preview-image" src="${esc(imageURL(promo.immagine))}" alt="Anteprima promozione">`:'<img id="promoPreview" class="preview-image" src="./icons/icon-192.png" alt="Anteprima immagine">'}<input id="promoImage" type="file" accept="image/*"><p class="footer-help">Da Foto o File • elaborazione sul dispositivo • immagine max 1800 px, miniatura max 520 px</p><div class="form-grid">${FIELDS.map(field=>{
   const val=promo[field]??'';const title=({titolo:'Titolo',categoria:'Categoria',marca:'Marca',codice:'Codice articolo',applicazione:'Applicazione / veicolo',motore:'Motore',prezzo:'Prezzo / promozione',validita:'Validità',keywords:'Parole chiave',note:'Note'})[field];return `<label class="${['titolo','applicazione','keywords','note'].includes(field)?'full':''}">${title}${field==='categoria'?`<select name="${field}">${CATEGORIES.map(c=>`<option value="${esc(c)}" ${val===c?'selected':''}>${esc(c)}</option>`).join('')}</select>`:field==='note'?`<textarea name="note">${esc(val)}</textarea>`:`<input name="${field}" value="${esc(val)}" ${['titolo','marca','codice'].includes(field)?'required':''}>`}</label>`;}).join('')}<label class="full" style="flex-direction:row;align-items:center"><input type="checkbox" name="attiva" style="width:auto" ${promo.attiva?'checked':''}> Promozione attiva</label></div></div><div class="edit-bottom"><button type="button" class="btn btn-light" data-action="close-dialog">Annulla</button><button type="submit" class="btn btn-red" id="savePromoBtn">Salva bozza</button></div></form>`;
@@ -62,12 +85,139 @@ async function canvasExport(image,max){const ratio=Math.min(1,max/Math.max(image
 const blob=await new Promise((resolve,reject)=>canvas.toBlob(b=>b?resolve(b):reject(new Error('Impossibile esportare immagine')),'image/webp',.84));return blob;}
 async function processImage(file,p){if(!file.type.startsWith('image/'))throw new Error('Seleziona un’immagine valida.');const u=URL.createObjectURL(file);try{const img=new Image();img.src=u;await img.decode();if(img.width*img.height>45000000)throw new Error('Immagine troppo grande: riduci prima la risoluzione.');const main=await canvasExport(img,1800);const thumb=await canvasExport(img,520);const slug=(p.marca+'_'+p.codice).toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/[^a-z0-9_-]/g,'_').replace(/_+/g,'_').slice(0,46)||'promo';const unique=Date.now()+'_'+Math.random().toString(36).slice(2,8);const ext=b=>b.type==='image/webp'?'webp':'png';const fullPath=`assets/img/${slug}_${unique}.${ext(main)}`;const thumbPath=`assets/thumbs/${slug}_${unique}.${ext(thumb)}`;await stageSave(fullPath,{mime:main.type,base64:await fileReadBase64(main)});await stageSave(thumbPath,{mime:thumb.type,base64:await fileReadBase64(thumb)});p.immagine=fullPath;p.thumb=thumbPath;}finally{URL.revokeObjectURL(u);}}
 async function savePromo(event){event.preventDefault();const btn=dialog.querySelector('#savePromoBtn');btn.disabled=true;btn.textContent='Salvataggio…';try{const form=new FormData(event.target);const p={id:Number(dialog.dataset.id),immagine:'',thumb:'',dataAggiornamento:today(),attiva:form.has('attiva')};for(const f of FIELDS)p[f]=String(form.get(f)||'').trim();p.marca=p.marca.toUpperCase();if(!p.titolo||!p.marca||!p.codice)throw new Error('Titolo, marca e codice sono obbligatori.');if(dialog.dataset.fresh==='false'){const old=state.promotions.find(x=>x.id===p.id);if(!old)throw new Error('Promozione originale non trovata.');p.immagine=old.immagine;p.thumb=old.thumb;}if(editingImage)await processImage(editingImage,p);if(!safePath(p.immagine)||!safePath(p.thumb))throw new Error('Seleziona un’immagine prima di salvare.');const idx=state.promotions.findIndex(x=>x.id===p.id);if(idx>=0)state.promotions[idx]=p;else state.promotions.unshift(p);closeDialog();dirty();toast('Promozione salvata in bozza.');}catch(err){toast(err.message);btn.disabled=false;btn.textContent='Salva bozza';}}
-async function api(path,options={}){if(options.method&&options.method.toUpperCase()!=='GET')throw new Error('Operazione disattivata nella versione TEST.');const headers={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};let response;try{response=await fetch(path.startsWith('https://')?path:API+path,{method:'GET',headers,cache:'no-store'});}catch{throw new Error('Connessione a GitHub non disponibile. Controlla Internet.');}let payload;try{payload=await response.json();}catch{payload=null;}if(!response.ok){let detail=payload?.message||response.statusText;if(response.status===403)detail='Limite di lettura GitHub raggiunto. Riprova più tardi.';throw new Error(`${detail} (HTTP ${response.status})`);}return payload;}
+async function api(path,options={}){
+ const {method='GET',token=null,body=null}=options;
+ const headers={'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'};
+ if(token)headers.Authorization=`Bearer ${token}`;
+ if(body!==null)headers['Content-Type']='application/json';
+ let response;
+ try{response=await fetch(API+path,{method,headers,body:body===null?undefined:JSON.stringify(body),cache:'no-store',credentials:'omit',redirect:'error'});}
+ catch{throw new Error('Connessione a GitHub non disponibile. Verifica Internet e riprova.');}
+ let payload;try{payload=await response.json();}catch{payload=null;}
+ if(!response.ok){
+  if(response.status===401)throw new Error('Token GitHub non valido o scaduto (401).');
+  if(response.status===403)throw new Error('Autorizzazione insufficiente o limite GitHub (403). Verifica Contents: Read and write e il repository selezionato.');
+  if(response.status===409||response.status===422)throw new Error('GitHub segnala un conflitto o dati non validi. Controlla la versione remota prima di riprovare ('+response.status+').');
+  throw new Error(`${payload?.message||response.statusText} (HTTP ${response.status})`);
+ }
+ return payload;
+}
 function decodeGitHubBase64(value){const raw=atob(String(value||'').replace(/\s/g,''));const bytes=Uint8Array.from(raw,c=>c.charCodeAt(0));return new TextDecoder('utf-8',{fatal:true}).decode(bytes);}
 async function currentRef(){return (await api(`/git/ref/heads/${BRANCH}`)).object.sha;}
-async function loadRemote(force=false){if(state.dirty&&!force&&!confirm('Hai modifiche non pubblicate. Vuoi eliminarle e ricaricare il catalogo online?'))return;state.loading=true;render();try{const head=await currentRef();const [commit,json,index]=await Promise.all([api(`/git/commits/${head}`),api(`/contents/data/catalogo.json?ref=${head}`),api(`/contents/index.html?ref=${head}`)]);const list=JSON.parse(decodeGitHubBase64(json.content));if(!Array.isArray(list))throw new Error('Catalogo GitHub non valido.');state.promotions=list;state.baseHead=head;state.baseTree=commit.tree.sha;state.indexHTML=decodeGitHubBase64(index.content);state.dirty=false;state.search='';state.filter='TUTTE';state.showArchived=true;state.error=false;state.message=`Catalogo caricato da GitHub (${list.length} promozioni).`;await stageClear();clearDraft();toast('Catalogo aggiornato.');}catch(e){state.error=true;state.message=e.message;toast(e.message);}finally{state.loading=false;render();}}
+async function loadRemote(force=false){if(state.dirty&&!force&&!confirm('Hai modifiche non pubblicate. Vuoi eliminarle e ricaricare il catalogo online?'))return;state.loading=true;render();try{const head=await currentRef();const [commit,json,index]=await Promise.all([api(`/git/commits/${head}`),api(`/contents/data/catalogo.json?ref=${head}`),api(`/contents/index.html?ref=${head}`)]);const list=JSON.parse(decodeGitHubBase64(json.content));if(!Array.isArray(list))throw new Error('Catalogo GitHub non valido.');state.promotions=list;state.baseHead=head;state.baseTree=commit.tree.sha;state.indexHTML=decodeGitHubBase64(index.content);state.dirty=false;state.review=null;state.needsReload=false;state.search='';state.filter='TUTTE';state.showArchived=true;state.error=false;state.message=`Catalogo caricato da GitHub (${list.length} promozioni).`;await stageClear();clearDraft();toast('Catalogo aggiornato.');}catch(e){state.error=true;state.message=e.message;toast(e.message);}finally{state.loading=false;render();}}
+// Locate the actual embedded JSON array (do not modify any surrounding page code).
+function locateEmbeddedJSON(html){
+ const match=/\blet\s+CATALOGO\s*=\s*/g.exec(html);
+ if(!match)throw new Error('Il file index.html non contiene il catalogo incorporato atteso.');
+ const start=html.indexOf('[',match.index+match[0].length);
+ if(start<0||html.slice(match.index+match[0].length,start).trim())throw new Error('Formato catalogo HTML non riconosciuto.');
+ let quote=false,escaped=false,depth=0;
+ for(let i=start;i<html.length;i++){
+  const c=html[i];
+  if(quote){if(escaped){escaped=false;continue;}if(c==='\\'){escaped=true;continue;}if(c==='"')quote=false;continue;}
+  if(c==='"'){quote=true;continue;}
+  if(c==='[')depth++;
+  if(c===']' && --depth===0){const segment=html.slice(start,i+1);let data;
+   try{data=JSON.parse(segment);}catch{throw new Error('Catalogo incorporato non è JSON valido.');}
+   if(!Array.isArray(data))throw new Error('Catalogo HTML non valido.');
+   return {start,end:i+1,data};
+  }
+ }
+ throw new Error('Catalogo incorporato in HTML incompleto.');
+}
+function canonical(v){return JSON.stringify(v);}
+function embeddedHTML(promotions){
+ const found=locateEmbeddedJSON(state.indexHTML);
+ // The original HTML must match the original GitHub data, not a hand-edited variant.
+ if(found.data.length!==state.originalLength)throw new Error('Numero promozioni HTML incoerente con la versione di partenza.');
+ const json=JSON.stringify(promotions).replace(/</g,'\\u003c').replace(/\u2028/g,'\\u2028').replace(/\u2029/g,'\\u2029');
+ return state.indexHTML.slice(0,found.start)+json+state.indexHTML.slice(found.end);
+}
+function diffPromos(oldList,newList){
+ const oldMap=new Map(oldList.map(p=>[p.id,p])),newMap=new Map(newList.map(p=>[p.id,p]));
+ const added=[],changed=[],deleted=[];
+ for(const p of newList){const before=oldMap.get(p.id);if(!before)added.push(p);
+  else if(canonical(before)!==canonical(p)){
+   const keys=new Set([...Object.keys(before),...Object.keys(p)]);
+   changed.push({id:p.id,titolo:p.titolo,fields:[...keys].filter(k=>canonical(before[k])!==canonical(p[k]))});
+  }
+ }
+ for(const p of oldList)if(!newMap.has(p.id))deleted.push(p);
+ return {changed,added,deleted};
+}
+function usedStaged(){const used=new Set(state.promotions.flatMap(p=>[p.immagine,p.thumb]));
+ return [...state.staged.entries()].filter(([path])=>used.has(path));}
+async function preflight(){
+ if(state.busy||!state.dirty)return;
+ if(state.needsReload){toast('Prima ricarica il catalogo da GitHub.');return;}
+ const problems=validate().filter(x=>!x.ok);
+ if(problems.length){toast('Prima correggi gli errori nella scheda Controllo.');return;}
+ state.busy=true;state.review=null;render();
+ try{
+  const now=await currentRef();
+  if(now!==state.baseHead)throw new Error('CONFLITTO: il catalogo GitHub è cambiato dopo la creazione della bozza. Le tue modifiche sono ancora sul dispositivo. NON ricaricare finché non hai verificato come recuperarle.');
+  const original=await api(`/contents/data/catalogo.json?ref=${encodeURIComponent(state.baseHead)}`);
+  const oldList=JSON.parse(decodeGitHubBase64(original.content));
+  const embedded=locateEmbeddedJSON(state.indexHTML).data;
+  if(canonical(embedded)!==canonical(oldList))throw new Error('index.html e catalogo.json non sono coerenti: interrompo la pubblicazione.');
+  state.originalLength=oldList.length;
+  const diff=diffPromos(oldList,state.promotions),assets=usedStaged().map(x=>x[0]);
+  if(!diff.changed.length&&!diff.added.length&&!diff.deleted.length&&!assets.length)throw new Error('La bozza non contiene modifiche effettive rispetto al catalogo online.');
+  const html=embeddedHTML(state.promotions);locateEmbeddedJSON(html);
+  state.review={...diff,assets,head:now};
+  state.error=false;state.message='Verifica completata. Controlla attentamente l’anteprima prima di pubblicare.';
+ }catch(e){state.error=true;state.message=e.message;toast(e.message);}
+ finally{state.busy=false;render();}
+}
+async function publishNow(){
+ if(state.busy||!state.review||!state.dirty)return;
+ const tokenEl=document.getElementById('githubToken');const consent=document.getElementById('confirmedPublish');
+ const token=(tokenEl?.value||'').trim();if(tokenEl)tokenEl.value='';
+ if(!consent?.checked){toast('Spunta prima la conferma di pubblicazione.');return;}
+ if(!/^github_pat_[a-zA-Z0-9_]+$/.test(token)){toast('Inserisci un fine-grained GitHub token valido.');return;}
+ const total=state.review.changed.length+state.review.added.length+state.review.deleted.length;
+ if(!confirm(`PUBBLICAZIONE ONLINE REALE\n\n${total} promozioni modificate/aggiunte/eliminate, ${state.review.assets.length} immagini nuove.\n\nConfermi che le officine potranno vedere queste modifiche?`))return;
+ state.busy=true;const reviewed=state.review;state.review=null;state.error=false;state.message='Verifica versione online…';render();
+ let committedSha=null;
+ try{
+  if((await currentRef())!==reviewed.head)throw new Error('Il catalogo è cambiato su GitHub. Pubblicazione annullata, bozza conservata.');
+  const u=await api(`/git/ref/heads/${BRANCH}`,{token});if(!u?.object?.sha)throw new Error('Non riesco a verificare le credenziali GitHub.');
+  state.message='Preparo i file del catalogo…';render();
+  const json=JSON.stringify(state.promotions,null,2)+'\n';
+  const html=embeddedHTML(state.promotions);
+  // Atomic change: assets and both catalog files point to one new commit.
+  const entries=[
+   {path:'data/catalogo.json',mode:'100644',type:'blob',content:json},
+   {path:'index.html',mode:'100644',type:'blob',content:html}
+  ];
+  for(const [path,asset] of usedStaged()){
+   if(!safePath(path)||!/^image\/(webp|png|jpeg)$/.test(asset.mime))throw new Error('Immagine locale non valida: '+path);
+   state.message='Carico le nuove immagini…';render();
+   const blob=await api('/git/blobs',{method:'POST',token,body:{content:asset.base64,encoding:'base64'}});
+   entries.push({path,mode:'100644',type:'blob',sha:blob.sha});
+  }
+  const tree=await api('/git/trees',{method:'POST',token,body:{base_tree:state.baseTree,tree:entries}});
+  const commit=await api('/git/commits',{method:'POST',token,body:{message:`A.R.D. Catalog Builder Mobile: aggiornamento ${today()}`,tree:tree.sha,parents:[reviewed.head]}});
+  committedSha=commit.sha;
+  if((await currentRef())!==reviewed.head)throw new Error('Un altro aggiornamento GitHub è arrivato durante la preparazione. Pubblicazione annullata, bozza conservata.');
+  await api(`/git/refs/heads/${BRANCH}`,{method:'PATCH',token,body:{sha:commit.sha,force:false}});
+  await publishSucceeded(commit.sha);
+ }catch(e){
+  // A lost connection after PATCH can make the result uncertain: check GitHub before retrying.
+  if(committedSha){try{if((await currentRef())===committedSha){await publishSucceeded(committedSha);return;}}catch{}}
+  state.error=true;state.message='Pubblicazione NON confermata: '+e.message+' Conserviamo la bozza; verifica il repository prima di tentare di nuovo.';
+  toast('Pubblicazione non confermata; la bozza è stata conservata.');
+ }finally{state.busy=false;render();}
+}
+async function publishSucceeded(sha){
+ state.publishedSha=sha;
+ state.baseHead=sha;state.baseTree=null;state.indexHTML=null;state.originalLength=null;
+ state.dirty=false;state.review=null;state.needsReload=true;clearDraft();await stageClear();
+ state.error=false;state.message=`Pubblicazione inviata a GitHub con successo (commit ${sha.slice(0,9)}). La pagina potrebbe aggiornarsi dopo qualche minuto. Ricarica il catalogo dal repository prima di nuove modifiche.`;
+ state.tab='pubblica';toast('GitHub aggiornato!');
+}
 async function discard(){if(!state.dirty)return;await loadRemote(false);}
-root.addEventListener('click',async event=>{const b=event.target.closest('[data-action],[data-filter]');if(!b)return;if(b.dataset.filter){state.filter=b.dataset.filter;render();return;}const action=b.dataset.action;const id=Number(b.dataset.id);const p=state.promotions.find(x=>x.id===id);switch(action){case'new':editDialog();break;case'edit':if(p)editDialog(p);break;case'toggle':if(p){p.attiva=!p.attiva;p.dataAggiornamento=today();dirty();}break;case'up':case'down':{let i=state.promotions.findIndex(x=>x.id===id);let j=i+(action==='up'?-1:1);if(i<0||j<0||j>=state.promotions.length)return;[state.promotions[i],state.promotions[j]]=[state.promotions[j],state.promotions[i]];dirty();break;}case'archived':state.showArchived=!state.showArchived;render();break;case'discard':await discard();break;case'reload':await loadRemote();break;}});
+root.addEventListener('click',async event=>{const b=event.target.closest('[data-action],[data-filter]');if(!b||state.busy)return;if(b.dataset.filter){state.filter=b.dataset.filter;render();return;}const action=b.dataset.action;if(state.needsReload&&['edit','new','toggle','up','down'].includes(action)){toast('Ricarica prima da GitHub per modificare nuovamente.');return;}const id=Number(b.dataset.id);const p=state.promotions.find(x=>x.id===id);switch(action){case'new':editDialog();break;case'edit':if(p)editDialog(p);break;case'toggle':if(p){p.attiva=!p.attiva;p.dataAggiornamento=today();dirty();}break;case'up':case'down':{let i=state.promotions.findIndex(x=>x.id===id);let j=i+(action==='up'?-1:1);if(i<0||j<0||j>=state.promotions.length)return;[state.promotions[i],state.promotions[j]]=[state.promotions[j],state.promotions[i]];dirty();break;}case'archived':state.showArchived=!state.showArchived;render();break;case'discard':await discard();break;case'reload':await loadRemote();break;case'preflight':await preflight();break;case'publish':await publishNow();break;}});
 root.addEventListener('input',event=>{if(event.target.id==='searchPromo'){const input=event.target;const i=input.selectionStart;state.search=input.value;render();const next=document.getElementById('searchPromo');next?.focus();next?.setSelectionRange(i,i);}});
 
 dialog.addEventListener('click',event=>{if(event.target.closest('[data-action="close-dialog"]'))closeDialog();});

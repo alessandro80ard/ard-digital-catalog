@@ -1,7 +1,7 @@
 {
-  "name": "A.R.D. Catalog Builder TEST",
-  "short_name": "ARD Test",
-  "description": "Versione collaudo senza pubblicazione su GitHub",
+  "name": "A.R.D. Catalog Builder Mobile BETA",
+  "short_name": "ARD Mobile",
+  "description": "Gestione delle promozioni con pubblicazione controllata su GitHub",
   "lang": "it-IT",
   "start_url": "./",
   "scope": "./",

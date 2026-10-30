@@ -69,7 +69,7 @@
   },
   {
     "applicazione" : "Fiat 500; Ypsilon; Ka’",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "FRIZIONI",
     "codice" : "821457",
     "dataAggiornamento" : "2026-10-30",
@@ -86,7 +86,7 @@
   },
   {
     "applicazione" : "FCA 1.3Mjet; 1.2/1.4 Bz",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "FRIZIONI",
     "codice" : "826522",
     "dataAggiornamento" : "2026-10-30",

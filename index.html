@@ -68,7 +68,7 @@ let CATALOGO = [
     "dataAggiornamento" : "2026-10-30",
     "id" : 53,
     "immagine" : "assets/img/ard17_53_9243c94c3d33.png",
-    "keywords" : "***BLACK FRIDAY***",
+    "keywords" : "***BLACK FRIDAY*** BATTERIE TAB.",
     "marca" : "TAB",
     "motore" : "TUTTI BZ & DS",
     "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
@@ -962,7 +962,7 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO/ELETTRONICO","ATTREZZATURE","PROMO GENERALI"];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

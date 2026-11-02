@@ -984,5 +984,22 @@
     "thumb" : "assets/thumbs/ard17_58_7c2e0f725021.png",
     "titolo" : "BLACK FRIDAY - PASTIGLIE ATE VW POST.",
     "validita" : "GIOVED' 12.11.2026"
+  },
+  {
+    "applicazione" : "BZ & DS",
+    "attiva" : false,
+    "categoria" : "LUBRIFICANTI",
+    "codice" : "hyper-b 5w30",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 59,
+    "immagine" : "assets/img/ard17_59_bd5248b97738.png",
+    "keywords" : "5W30",
+    "marca" : "ENEOS",
+    "motore" : "TUTTI",
+    "note" : "SOLO IL 13.11.2026",
+    "prezzo" : "4,75€/lt (60lt)",
+    "thumb" : "assets/thumbs/ard17_59_bd5248b97738.png",
+    "titolo" : "BLACK FRIDAY - ENEOS",
+    "validita" : "VENERDI' 13.11.2026"
   }
 ]

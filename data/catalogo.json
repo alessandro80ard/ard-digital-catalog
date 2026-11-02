@@ -967,5 +967,22 @@
     "thumb" : "assets/thumbs/ard17_57_aeb23a7567af.png",
     "titolo" : "BLACK FRIDAY - FILTRO OLIO MANN",
     "validita" : "MERCOLEDI' 11.11.2026"
+  },
+  {
+    "applicazione" : "GRUPPO VW",
+    "attiva" : false,
+    "categoria" : "PASTIGLIE FRENO",
+    "codice" : "602820",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 58,
+    "immagine" : "assets/img/ard17_58_7c2e0f725021.png",
+    "keywords" : "POSTERIORI VW",
+    "marca" : "ATE",
+    "motore" : "TUTTI",
+    "note" : "SOLO IL 12.11.2026",
+    "prezzo" : "16,99€",
+    "thumb" : "assets/thumbs/ard17_58_7c2e0f725021.png",
+    "titolo" : "BLACK FRIDAY - PASTIGLIE ATE VW POST.",
+    "validita" : "GIOVED' 12.11.2026"
   }
 ]

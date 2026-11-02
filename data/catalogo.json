@@ -1086,5 +1086,22 @@
     "thumb" : "assets/thumbs/ard17_64_231be557d066.png",
     "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE CON POMPA ACQUA FIAT",
     "validita" : "VENERDI' 20.11.2026"
+  },
+  {
+    "applicazione" : "TUTTI I VEICOLI A MOTORE",
+    "attiva" : false,
+    "categoria" : "BATTERIE",
+    "codice" : "E11",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 65,
+    "immagine" : "assets/img/ard17_65_4a1c69aa54a7.png",
+    "keywords" : "VARTA E11",
+    "marca" : "VARTA",
+    "motore" : "BENZINA O DIESEL",
+    "note" : "SOLO IL 23.11.2026",
+    "prezzo" : "59,90€",
+    "thumb" : "assets/thumbs/ard17_65_4a1c69aa54a7.png",
+    "titolo" : "BLACK FRIDAY - VARTA E11",
+    "validita" : "LUNEDI' 23.11.2026"
   }
 ]

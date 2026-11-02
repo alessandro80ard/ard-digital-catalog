@@ -1307,5 +1307,22 @@
     "thumb" : "assets/thumbs/ard17_77_27e05f868581.png",
     "titolo" : "BLACK FRIDAY - AVS FILTERS",
     "validita" : "VENERDI' 27.11.2026 dalle 17.00 alle 18.00"
+  },
+  {
+    "applicazione" : "TUTTI IMOTORI BENZINA E DIESEL",
+    "attiva" : false,
+    "categoria" : "BATTERIE",
+    "codice" : "C22",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 78,
+    "immagine" : "assets/img/ard17_78_a4f1e85fc1bb.png",
+    "keywords" : "VARTA C22",
+    "marca" : "VARTA",
+    "motore" : "TUTTI IMOTORI BENZINA E DIESEL",
+    "note" : "VENERDI' 27.11.2026 dalle 18.00 alle 19.00",
+    "prezzo" : "45,90€",
+    "thumb" : "assets/thumbs/ard17_78_a4f1e85fc1bb.png",
+    "titolo" : "BLACK FRIDAY - VARTA",
+    "validita" : "VENERDI' 27.11.2026 dalle 18.00 alle 19.00"
   }
 ]

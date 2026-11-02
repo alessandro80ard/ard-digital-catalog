@@ -1171,5 +1171,22 @@
     "thumb" : "assets/thumbs/ard17_69_d0aa62f7cea9.png",
     "titolo" : "BLACK FRIDAY - VALEO",
     "validita" : "VENERDI' 27.11.2026 dalle 9.00 alle 10.00"
+  },
+  {
+    "applicazione" : "FIAT",
+    "attiva" : false,
+    "categoria" : "PASTIGLIE FRENO",
+    "codice" : "603951",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 70,
+    "immagine" : "assets/img/ard17_70_b445bc66b1a4.png",
+    "keywords" : "BANANETTA",
+    "marca" : "ATE",
+    "motore" : "188A4000; 169A2000 ecc ecc",
+    "note" : "VENERDI' 27.11.2026 dalle 10.00 alle 11.00",
+    "prezzo" : "8,90€ (minimo 3 pz)",
+    "thumb" : "assets/thumbs/ard17_70_b445bc66b1a4.png",
+    "titolo" : "BLACK FRIDAY - ATE",
+    "validita" : "VENERDI' 27.11.2026 dalle 10.00 alle 11.00"
   }
 ]

@@ -919,7 +919,7 @@
   },
   {
     "applicazione" : "PEUGEOT 1.2 PURETECH - BAGNO D'OLIO",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "DISTRIBUZIONI",
     "codice" : "VKMA03306-1",
     "dataAggiornamento" : "2026-11-02",

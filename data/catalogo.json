@@ -17,6 +17,23 @@
     "validita" : "Ad Esaurimento"
   },
   {
+    "applicazione" : "***BLACK FRIDAY***",
+    "attiva" : true,
+    "categoria" : "PROMO GENERALI",
+    "codice" : "***BLACK FRIDAY***",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 80,
+    "immagine" : "assets/img/ard17_80_5e04f57a507e.png",
+    "keywords" : "***BLACK FRIDAY***",
+    "marca" : "***BLACK FRIDAY***",
+    "motore" : "***BLACK FRIDAY***",
+    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
+    "prezzo" : "***BLACK FRIDAY***",
+    "thumb" : "assets/thumbs/ard17_80_5e04f57a507e.png",
+    "titolo" : "***BLACK FRIDAY***",
+    "validita" : "Ad Esaurimento"
+  },
+  {
     "applicazione" : "AUTO",
     "attiva" : true,
     "categoria" : "BATTERIE",
@@ -1341,22 +1358,5 @@
     "thumb" : "assets/thumbs/ard17_79_3fa8e5f18473.png",
     "titolo" : "BLACK FRIDAY VARTA",
     "validita" : "SOLO IL 30.11.2026"
-  },
-  {
-    "applicazione" : "***BLACK FRIDAY***",
-    "attiva" : true,
-    "categoria" : "PROMO GENERALI",
-    "codice" : "***BLACK FRIDAY***",
-    "dataAggiornamento" : "2026-11-02",
-    "id" : 80,
-    "immagine" : "assets/img/ard17_80_5e04f57a507e.png",
-    "keywords" : "***BLACK FRIDAY***",
-    "marca" : "***BLACK FRIDAY***",
-    "motore" : "***BLACK FRIDAY***",
-    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
-    "prezzo" : "***BLACK FRIDAY***",
-    "thumb" : "assets/thumbs/ard17_80_5e04f57a507e.png",
-    "titolo" : "***BLACK FRIDAY***",
-    "validita" : "Ad Esaurimento"
   }
 ]

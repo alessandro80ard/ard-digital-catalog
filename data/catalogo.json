@@ -916,5 +916,22 @@
     "thumb" : "assets/thumbs/ard17_54_7e705b71befa.png",
     "titolo" : "BLACK FRIDAY - PROTETTIVO RADIATORI PURO BLU 20LT",
     "validita" : "DAL 2.11 AL 6.11"
+  },
+  {
+    "applicazione" : "PEUGEOT 1.2 PURETECH - BAGNO D'OLIO",
+    "attiva" : false,
+    "categoria" : "DISTRIBUZIONI",
+    "codice" : "VKMA03306-1",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 55,
+    "immagine" : "assets/img/ard17_55_087c4aa470f2.png",
+    "keywords" : "PURETECH",
+    "marca" : "SKF",
+    "motore" : "BZ",
+    "note" : "SOLO IL 6.11.2026",
+    "prezzo" : "119,90",
+    "thumb" : "assets/thumbs/ard17_55_087c4aa470f2.png",
+    "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE SKF VKMA03306-1",
+    "validita" : "LUNEDI 9.11.2026"
   }
 ]

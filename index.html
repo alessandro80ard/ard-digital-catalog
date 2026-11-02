@@ -1438,7 +1438,7 @@ const CATS = [
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}
-function catsPresent(){return [...new Set(CATALOGO.map(x=>x.categoria))].sort()} function brandsPresent(){return [...new Set(CATALOGO.map(x=>x.marca))].sort()}
+function catsPresent(){return [...new Set(CATALOGO.map(x=>x.categoria))].sort()} function brandsPresent(){return [...new Set(CATALOGO.filter(x=>x.attiva).map(x=>x.marca).filter(Boolean))].sort()}
 function renderFilters(){
  const cats=['TUTTE',...CATS.filter(c=>catsPresent().includes(c))]; $('catFilters').innerHTML=cats.map(c=>`<button class="chip ${state.cat==c?'active':''}" onclick="setCat('${c}')">${c}</button>`).join('');
  const brands=['TUTTE',...brandsPresent()]; $('brandFilters').innerHTML=brands.map(b=>`<button class="chip red ${state.brand==b?'active':''}" onclick="setBrand('${b}')">${b}</button>`).join('');

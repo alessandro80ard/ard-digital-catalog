@@ -1273,5 +1273,22 @@
     "thumb" : "assets/thumbs/ard17_75_58c4f42d1fce.png",
     "titolo" : "BLACK FRIDAY - MANN",
     "validita" : "VENERDI' 27.11.2026 dalle 15.00 alle 16.00"
+  },
+  {
+    "applicazione" : "VARIE APPLICAZIONI",
+    "attiva" : false,
+    "categoria" : "FILTRI",
+    "codice" : "UFI ALTA MOVIMENTAZIONE",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 76,
+    "immagine" : "assets/img/ard17_76_3d619f90855a.png",
+    "keywords" : "FILTRI UFI",
+    "marca" : "UFI",
+    "motore" : "VARIE APPLICAZIONI",
+    "note" : "VENERDI' 27.11.2026 dalle 16.00 alle 17.00",
+    "prezzo" : "a partire da 3,15€",
+    "thumb" : "assets/thumbs/ard17_76_3d619f90855a.png",
+    "titolo" : "BLACK FRIDAY - UFI",
+    "validita" : "VENERDI' 27.11.2026 dalle 16.00 alle 17.00"
   }
 ]

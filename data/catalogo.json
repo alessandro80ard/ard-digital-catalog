@@ -1205,5 +1205,22 @@
     "thumb" : "assets/thumbs/ard17_71_07a920cca42d.png",
     "titolo" : "BLACK FRIDAY - CHAMPION",
     "validita" : "VENERDI' 27.11.2026 dalle 11.00 alle 12.00"
+  },
+  {
+    "applicazione" : "DUCATO 2020",
+    "attiva" : false,
+    "categoria" : "PASTIGLIE FRENO",
+    "codice" : "P61125",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 72,
+    "immagine" : "assets/img/ard17_72_ce0c8de442a0.png",
+    "keywords" : "DUCATO FRENI",
+    "marca" : "BREMBO",
+    "motore" : "TUTTI DUCATO",
+    "note" : "VENERDI' 27.11.2026 dalle 12.00 alle 13.00",
+    "prezzo" : "28,50€",
+    "thumb" : "assets/thumbs/ard17_72_ce0c8de442a0.png",
+    "titolo" : "BLACK FRIDAY - BREMBO",
+    "validita" : "VENERDI' 27.11.2026 dalle 12.00 alle 13.00"
   }
 ]

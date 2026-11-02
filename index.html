@@ -122,7 +122,7 @@ let CATALOGO = [
     "keywords" : "CAMBIO AUTOMATICO",
     "marca" : "FEBI; ENEOS; CHAMPION",
     "motore" : "TUTTI",
-    "note" : "SERVIZIO GIORNSLIERO",
+    "note" : "SERVIZIO GIORNALIERO",
     "prezzo" : "1,00",
     "thumb" : "assets/thumbs/febi_eneos_champion_xxxx.png",
     "titolo" : "FILTRI E LUBRIFICANTI CAMBIO AUTOMATICO",
@@ -1421,20 +1421,7 @@ let CATALOGO = [
     "validita" : "SOLO IL 30.11.2026"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

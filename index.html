@@ -980,7 +980,7 @@ let CATALOGO = [
   },
   {
     "applicazione" : "TUTTI I VEICOLI BS & DS",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "PRODOTTI TECNICI",
     "codice" : "BLU 20",
     "dataAggiornamento" : "2026-11-02",
@@ -1421,7 +1421,20 @@ let CATALOGO = [
     "validita" : "SOLO IL 30.11.2026"
   }
 ];
-const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO"];
+const CATS = [
+  "BATTERIE",
+  "FILTRI",
+  "FRENANTE",
+  "FRIZIONI",
+  "DISTRIBUZIONE",
+  "LUBRIFICANTI",
+  "PRODOTTI TECNICI",
+  "ELETTRICO/ELETTRONICO",
+  "ATTREZZATURE",
+  "PROMO GENERALI",
+  "DISTRIBUZIONI",
+  "PASTIGLIE FRENO"
+];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

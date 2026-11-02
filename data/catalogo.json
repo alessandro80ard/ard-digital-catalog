@@ -919,7 +919,7 @@
   },
   {
     "applicazione" : "TUTTI I VEICOLI BS & DS",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "PRODOTTI TECNICI",
     "codice" : "BLU 20",
     "dataAggiornamento" : "2026-11-02",

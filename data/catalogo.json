@@ -1035,5 +1035,22 @@
     "thumb" : "assets/thumbs/ard17_61_7773a7f4edb9.png",
     "titolo" : "BLACK FRIDAY - KIT TAGLIANDO",
     "validita" : "MARTEDI' 17.11.2026"
+  },
+  {
+    "applicazione" : "GRANDE PUNTO; DOBLO'; FIORINO/QUBO/NEMO/BIPPER; ecc ecc",
+    "attiva" : false,
+    "categoria" : "PASTIGLIE FRENO",
+    "codice" : "0986424597",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 62,
+    "immagine" : "assets/img/ard17_62_c91644db5f17.png",
+    "keywords" : "PASTIGLIE FRENO",
+    "marca" : "BOSCH",
+    "motore" : "BZ & DS",
+    "note" : "SOLO IL 18.11.2026",
+    "prezzo" : "16,90€ - 14,50€ - 11.90€",
+    "thumb" : "assets/thumbs/ard17_62_c91644db5f17.png",
+    "titolo" : "BLACK FRIDAY - PASTIGLIE BOSCH",
+    "validita" : "MERCOLEDI' 18.11.2026"
   }
 ]

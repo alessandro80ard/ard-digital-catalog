@@ -1149,10 +1149,27 @@
     "keywords" : "POMPA CON SENSORE INTEGRATO - ORIGINALE",
     "marca" : "DAYCO",
     "motore" : "VW - AUDI - SEAT - SKODA",
-    "note" : "SOLO IL 26.11.2026",
+    "note" : "",
     "prezzo" : "149,90€",
     "thumb" : "assets/thumbs/ard17_68_98b21692b418.png",
     "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE VW",
     "validita" : "GIOVEDI' 26.11.2026"
+  },
+  {
+    "applicazione" : "FIAT BENZIAN",
+    "attiva" : false,
+    "categoria" : "FRIZIONI",
+    "codice" : "821457",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 69,
+    "immagine" : "assets/img/ard17_69_d0aa62f7cea9.png",
+    "keywords" : "POMPA CON SENSORE INTEGRATO - ORIGINALE",
+    "marca" : "VALEO",
+    "motore" : "188A4000; 169A2000 ecc ecc",
+    "note" : "VENERDI' 27.11.2026 dalle 9.00 alle 10.00",
+    "prezzo" : "45,50€ x1pz; 39,99€ x3pz",
+    "thumb" : "assets/thumbs/ard17_69_d0aa62f7cea9.png",
+    "titolo" : "BLACK FRIDAY - VALEO",
+    "validita" : "VENERDI' 27.11.2026 dalle 9.00 alle 10.00"
   }
 ]

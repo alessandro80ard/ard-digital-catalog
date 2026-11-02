@@ -1021,7 +1021,7 @@
   },
   {
     "applicazione" : "500X/L; RENEGADE; TIPO; FIORINO/QUBO",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "FILTRI",
     "codice" : "U.F.I. 30.677.00;25.083.00;26.052.00;FP003",
     "dataAggiornamento" : "2026-11-02",

@@ -950,5 +950,22 @@
     "thumb" : "assets/thumbs/ard17_56_dc860414e2ff.png",
     "titolo" : "BLACK FRIDAY - KIT FRIZIONE LUK FIAT ",
     "validita" : "MARTEDI 10.11.2026"
+  },
+  {
+    "applicazione" : "HYUNDAI - KIA",
+    "attiva" : false,
+    "categoria" : "FILTRI",
+    "codice" : "HU7001X",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 57,
+    "immagine" : "assets/img/ard17_57_aeb23a7567af.png",
+    "keywords" : "FILTRO OLIO HYUNDAI",
+    "marca" : "MANN",
+    "motore" : "1,7 D",
+    "note" : "SOLO IL 11.11.2026",
+    "prezzo" : "3,33€ (minimo 3 pezzi - tot. 9,99€)",
+    "thumb" : "assets/thumbs/ard17_57_aeb23a7567af.png",
+    "titolo" : "BLACK FRIDAY - FILTRO OLIO MANN",
+    "validita" : "MERCOLEDI' 11.11.2026"
   }
 ]

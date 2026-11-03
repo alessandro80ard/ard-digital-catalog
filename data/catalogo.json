@@ -1,10 +1,10 @@
 [
   {
     "applicazione" : "***BLACK FRIDAY***",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "PROMO GENERALI",
     "codice" : "***BLACK FRIDAY***",
-    "dataAggiornamento" : "2026-10-30",
+    "dataAggiornamento" : "2026-11-03",
     "id" : 52,
     "immagine" : "assets/img/ard17_52_bd5036da2297.png",
     "keywords" : "***BLACK FRIDAY***",

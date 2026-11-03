@@ -62,10 +62,10 @@
 let CATALOGO = [
   {
     "applicazione" : "***BLACK FRIDAY***",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "PROMO GENERALI",
     "codice" : "***BLACK FRIDAY***",
-    "dataAggiornamento" : "2026-10-30",
+    "dataAggiornamento" : "2026-11-03",
     "id" : 52,
     "immagine" : "assets/img/ard17_52_bd5036da2297.png",
     "keywords" : "***BLACK FRIDAY***",
@@ -1421,20 +1421,7 @@ let CATALOGO = [
     "validita" : "SOLO IL 30.11.2026"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

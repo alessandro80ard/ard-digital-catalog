@@ -1,23 +1,6 @@
 [
   {
     "applicazione" : "***BLACK FRIDAY***",
-    "attiva" : false,
-    "categoria" : "PROMO GENERALI",
-    "codice" : "***BLACK FRIDAY***",
-    "dataAggiornamento" : "2026-11-03",
-    "id" : 52,
-    "immagine" : "assets/img/ard17_52_bd5036da2297.png",
-    "keywords" : "***BLACK FRIDAY***",
-    "marca" : "***BLACK FRIDAY***",
-    "motore" : "***BLACK FRIDAY***",
-    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
-    "prezzo" : "***BLACK FRIDAY***",
-    "thumb" : "assets/thumbs/ard17_52_bd5036da2297.png",
-    "titolo" : "PREPARATI AL BLACK FRIDAY",
-    "validita" : "Ad Esaurimento"
-  },
-  {
-    "applicazione" : "***BLACK FRIDAY***",
     "attiva" : true,
     "categoria" : "PROMO GENERALI",
     "codice" : "***BLACK FRIDAY***",
@@ -65,6 +48,23 @@
     "prezzo" : "1,00",
     "thumb" : "assets/thumbs/febi_eneos_champion_xxxx.png",
     "titolo" : "FILTRI E LUBRIFICANTI CAMBIO AUTOMATICO",
+    "validita" : "Ad Esaurimento"
+  },
+  {
+    "applicazione" : "***BLACK FRIDAY***",
+    "attiva" : false,
+    "categoria" : "PROMO GENERALI",
+    "codice" : "***BLACK FRIDAY***",
+    "dataAggiornamento" : "2026-11-03",
+    "id" : 52,
+    "immagine" : "assets/img/ard17_52_bd5036da2297.png",
+    "keywords" : "***BLACK FRIDAY***",
+    "marca" : "***BLACK FRIDAY***",
+    "motore" : "***BLACK FRIDAY***",
+    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
+    "prezzo" : "***BLACK FRIDAY***",
+    "thumb" : "assets/thumbs/ard17_52_bd5036da2297.png",
+    "titolo" : "PREPARATI AL BLACK FRIDAY",
     "validita" : "Ad Esaurimento"
   },
   {

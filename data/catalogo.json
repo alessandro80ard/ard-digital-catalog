@@ -2,6 +2,23 @@
   {
     "applicazione" : "***BLACK FRIDAY***",
     "attiva" : true,
+    "categoria" : "PROMO GENERALI",
+    "codice" : "***BLACK FRIDAY***",
+    "dataAggiornamento" : "2026-11-06",
+    "id" : 52,
+    "immagine" : "assets/img/ard17_52_bd5036da2297.png",
+    "keywords" : "***BLACK FRIDAY***",
+    "marca" : "***BLACK FRIDAY***",
+    "motore" : "***BLACK FRIDAY***",
+    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
+    "prezzo" : "***BLACK FRIDAY***",
+    "thumb" : "assets/thumbs/ard17_52_bd5036da2297.png",
+    "titolo" : "PREPARATI AL BLACK FRIDAY",
+    "validita" : "Ad Esaurimento"
+  },
+  {
+    "applicazione" : "***BLACK FRIDAY***",
+    "attiva" : true,
     "categoria" : "BLACK FRIDAY",
     "codice" : "***BLACK FRIDAY***",
     "dataAggiornamento" : "2026-11-06",
@@ -32,23 +49,6 @@
     "thumb" : "assets/thumbs/ard17_53_9243c94c3d33.png",
     "titolo" : "BLACK FRIDAY BATTERIE TAB - DAL 2 AL 6 NOVEMBRE",
     "validita" : "DAL 2 AL 6 NOVEMRBE"
-  },
-  {
-    "applicazione" : "***BLACK FRIDAY***",
-    "attiva" : false,
-    "categoria" : "PROMO GENERALI",
-    "codice" : "***BLACK FRIDAY***",
-    "dataAggiornamento" : "2026-11-03",
-    "id" : 52,
-    "immagine" : "assets/img/ard17_52_bd5036da2297.png",
-    "keywords" : "***BLACK FRIDAY***",
-    "marca" : "***BLACK FRIDAY***",
-    "motore" : "***BLACK FRIDAY***",
-    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
-    "prezzo" : "***BLACK FRIDAY***",
-    "thumb" : "assets/thumbs/ard17_52_bd5036da2297.png",
-    "titolo" : "PREPARATI AL BLACK FRIDAY",
-    "validita" : "Ad Esaurimento"
   },
   {
     "applicazione" : "FIAT BENZINA ",

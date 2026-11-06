@@ -1375,5 +1375,22 @@
     "thumb" : "assets/thumbs/febi_eneos_champion_xxxx.png",
     "titolo" : "FILTRI E LUBRIFICANTI CAMBIO AUTOMATICO",
     "validita" : "Ad Esaurimento"
+  },
+  {
+    "applicazione" : "FIAT BENZINA",
+    "attiva" : true,
+    "categoria" : "BLACK FRIDAY",
+    "codice" : "ZKR7A-10 - NGK1691",
+    "dataAggiornamento" : "2026-11-06",
+    "id" : 82,
+    "immagine" : "assets/img/ard_ipad_82_9ba7830c19e7.png",
+    "keywords" : "BLACK FRIDAY",
+    "marca" : "NGK",
+    "motore" : "199A4000; 350A1000 ecc",
+    "note" : "BLACK FRIDAY | solo il l 06.11.2026",
+    "prezzo" : "3,49€/pz",
+    "thumb" : "assets/thumbs/ard_ipad_82_9ba7830c19e7.png",
+    "titolo" : "BLACK FRIDAY - NGK",
+    "validita" : "solo il 06.11.2026"
   }
 ]

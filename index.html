@@ -91,7 +91,7 @@ let CATALOGO = [
     "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
     "prezzo" : "***BLACK FRIDAY***",
     "thumb" : "assets/thumbs/ard17_80_5e04f57a507e.png",
-    "titolo" : "***BLACK FRIDAY***",
+    "titolo" : "BLACK FRIDAY - LOGISTICA",
     "validita" : "Ad Esaurimento"
   },
   {
@@ -1132,24 +1132,7 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO",
-  "SOSPENSIONI",
-  "BLACK FRIDAY",
-  "BLACK FRIDA",
-  "BLACK FRIDAYR"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

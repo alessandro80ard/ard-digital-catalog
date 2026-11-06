@@ -561,23 +561,6 @@
     "validita" : "Ad Esaurimento"
   },
   {
-    "applicazione" : "FIAT; ALFA; LANCIA; PSA; CITROEN; PEUGEOT; RENAULT",
-    "attiva" : false,
-    "categoria" : "FILTRI",
-    "codice" : "MIX",
-    "dataAggiornamento" : "2026-10-13",
-    "id" : 49,
-    "immagine" : "assets/img/free_mix.png",
-    "keywords" : "ABITACOLO",
-    "marca" : "FREE",
-    "motore" : "TT",
-    "note" : "FILTRI IN SOTTOCOSTO",
-    "prezzo" : "3,90 - 4,90  - 5,70",
-    "thumb" : "assets/thumbs/free_mix.png",
-    "titolo" : "FILTRI ABITACOLO SOTTOCOSTO",
-    "validita" : "Ad Esaurimento"
-  },
-  {
     "applicazione" : "TUTTI I VEICOLI BS & DS",
     "attiva" : true,
     "categoria" : "BLACK FRIDAY",
@@ -1018,23 +1001,6 @@
     "thumb" : "assets/thumbs/ard17_79_3fa8e5f18473.png",
     "titolo" : "BLACK FRIDAY VARTA",
     "validita" : "SOLO IL 30.11.2026"
-  },
-  {
-    "applicazione" : "TUTTI",
-    "attiva" : false,
-    "categoria" : "SOSPENSIONI",
-    "codice" : "XXXX",
-    "dataAggiornamento" : "2026-11-04",
-    "id" : 81,
-    "immagine" : "assets/img/ard_ipad_81_4bdd8e82aa42.png",
-    "keywords" : "AMMORTIZZATORI",
-    "marca" : "MONROE; KYB; QUALITY PARTS; MANDO",
-    "motore" : "TUTTI",
-    "note" : "SERVIZIO GIORNALIERO",
-    "prezzo" : "1,00",
-    "thumb" : "assets/thumbs/ard_ipad_81_4bdd8e82aa42.png",
-    "titolo" : "GAMMA AMMORTIZZATORI",
-    "validita" : "SEMPRE"
   },
   {
     "applicazione" : "FIAT BENZINA",

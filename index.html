@@ -622,23 +622,6 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   },
   {
-    "applicazione" : "FIAT; ALFA; LANCIA; PSA; CITROEN; PEUGEOT; RENAULT",
-    "attiva" : false,
-    "categoria" : "FILTRI",
-    "codice" : "MIX",
-    "dataAggiornamento" : "2026-10-13",
-    "id" : 49,
-    "immagine" : "assets/img/free_mix.png",
-    "keywords" : "ABITACOLO",
-    "marca" : "FREE",
-    "motore" : "TT",
-    "note" : "FILTRI IN SOTTOCOSTO",
-    "prezzo" : "3,90 - 4,90  - 5,70",
-    "thumb" : "assets/thumbs/free_mix.png",
-    "titolo" : "FILTRI ABITACOLO SOTTOCOSTO",
-    "validita" : "Ad Esaurimento"
-  },
-  {
     "applicazione" : "TUTTI I VEICOLI BS & DS",
     "attiva" : true,
     "categoria" : "BLACK FRIDAY",
@@ -1081,23 +1064,6 @@ let CATALOGO = [
     "validita" : "SOLO IL 30.11.2026"
   },
   {
-    "applicazione" : "TUTTI",
-    "attiva" : false,
-    "categoria" : "SOSPENSIONI",
-    "codice" : "XXXX",
-    "dataAggiornamento" : "2026-11-04",
-    "id" : 81,
-    "immagine" : "assets/img/ard_ipad_81_4bdd8e82aa42.png",
-    "keywords" : "AMMORTIZZATORI",
-    "marca" : "MONROE; KYB; QUALITY PARTS; MANDO",
-    "motore" : "TUTTI",
-    "note" : "SERVIZIO GIORNALIERO",
-    "prezzo" : "1,00",
-    "thumb" : "assets/thumbs/ard_ipad_81_4bdd8e82aa42.png",
-    "titolo" : "GAMMA AMMORTIZZATORI",
-    "validita" : "SEMPRE"
-  },
-  {
     "applicazione" : "FIAT BENZINA",
     "attiva" : true,
     "categoria" : "BLACK FRIDAY",
@@ -1132,7 +1098,24 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
+const CATS = [
+  "BATTERIE",
+  "FILTRI",
+  "FRENANTE",
+  "FRIZIONI",
+  "DISTRIBUZIONE",
+  "LUBRIFICANTI",
+  "PRODOTTI TECNICI",
+  "ELETTRICO/ELETTRONICO",
+  "ATTREZZATURE",
+  "PROMO GENERALI",
+  "DISTRIBUZIONI",
+  "PASTIGLIE FRENO",
+  "SOSPENSIONI",
+  "BLACK FRIDAY",
+  "BLACK FRIDA",
+  "BLACK FRIDAYR"
+];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

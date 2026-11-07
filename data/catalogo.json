@@ -562,10 +562,10 @@
   },
   {
     "applicazione" : "TUTTI I VEICOLI BS & DS",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "BLACK FRIDAY",
     "codice" : "BLU 20",
-    "dataAggiornamento" : "2026-11-06",
+    "dataAggiornamento" : "2026-11-07",
     "id" : 54,
     "immagine" : "assets/img/ard17_54_7e705b71befa.png",
     "keywords" : "RADAITORI - BLU",

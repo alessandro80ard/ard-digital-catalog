@@ -52,10 +52,10 @@
   },
   {
     "applicazione" : "FIAT BENZINA ",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "ELETTRICO/ELETTRONICO",
     "codice" : "ZKR7A10",
-    "dataAggiornamento" : "2026-11-06",
+    "dataAggiornamento" : "2026-11-07",
     "id" : 38,
     "immagine" : "assets/img/ngk_zkr7a10.png",
     "keywords" : "CANDELE; NGK; PUNTO; YPSILON; FIAT; LANCIA; ALFA; 500; KA",

@@ -1004,10 +1004,10 @@
   },
   {
     "applicazione" : "FIAT BENZINA",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "BLACK FRIDAY",
     "codice" : "ZKR7A-10 - NGK1691",
-    "dataAggiornamento" : "2026-11-06",
+    "dataAggiornamento" : "2026-11-07",
     "id" : 82,
     "immagine" : "assets/img/ard_ipad_82_9ba7830c19e7.png",
     "keywords" : "BLACK FRIDAY",

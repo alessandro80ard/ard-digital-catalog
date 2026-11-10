@@ -613,10 +613,10 @@
   },
   {
     "applicazione" : "HYUNDAI - KIA",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "FILTRI",
     "codice" : "HU7001X",
-    "dataAggiornamento" : "2026-11-02",
+    "dataAggiornamento" : "2026-11-10",
     "id" : 57,
     "immagine" : "assets/img/ard17_57_aeb23a7567af.png",
     "keywords" : "FILTRO OLIO HYUNDAI",

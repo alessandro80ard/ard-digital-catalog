@@ -150,7 +150,7 @@ let CATALOGO = [
     "attiva" : false,
     "categoria" : "ELETTRICO/ELETTRONICO",
     "codice" : "ZKR7A10",
-    "dataAggiornamento" : "2026-11-07",
+    "dataAggiornamento" : "2026-11-12",
     "id" : 38,
     "immagine" : "assets/img/ngk_zkr7a10.png",
     "keywords" : "CANDELE; NGK; PUNTO; YPSILON; FIAT; LANCIA; ALFA; 500; KA",
@@ -1098,7 +1098,24 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
+const CATS = [
+  "BATTERIE",
+  "FILTRI",
+  "FRENANTE",
+  "FRIZIONI",
+  "DISTRIBUZIONE",
+  "LUBRIFICANTI",
+  "PRODOTTI TECNICI",
+  "ELETTRICO/ELETTRONICO",
+  "ATTREZZATURE",
+  "PROMO GENERALI",
+  "DISTRIBUZIONI",
+  "PASTIGLIE FRENO",
+  "SOSPENSIONI",
+  "BLACK FRIDAY",
+  "BLACK FRIDA",
+  "BLACK FRIDAYR"
+];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

@@ -358,10 +358,10 @@
   },
   {
     "applicazione" : "TUTTI BENZINA E DIESEL",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "PRODOTTI TECNICI",
     "codice" : "ROSSO - BLU - GIALLO",
-    "dataAggiornamento" : "2026-10-30",
+    "dataAggiornamento" : "2026-11-12",
     "id" : 46,
     "immagine" : "assets/img/cora__eurodet_arexons_wynns_rosso_-_blu_-_giallo.png",
     "keywords" : "ANTIGELO",

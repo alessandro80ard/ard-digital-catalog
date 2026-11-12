@@ -1,5 +1,22 @@
 [
   {
+    "applicazione" : "BZ & DS",
+    "attiva" : true,
+    "categoria" : "LUBRIFICANTI",
+    "codice" : "hyper-b 5w30",
+    "dataAggiornamento" : "2026-11-12",
+    "id" : 59,
+    "immagine" : "assets/img/ard17_59_bd5248b97738.png",
+    "keywords" : "5W30",
+    "marca" : "ENEOS",
+    "motore" : "TUTTI",
+    "note" : "SOLO IL 13.11.2026",
+    "prezzo" : "4,75€/lt (60lt)",
+    "thumb" : "assets/thumbs/ard17_59_bd5248b97738.png",
+    "titolo" : "BLACK FRIDAY - ENEOS",
+    "validita" : "VENERDI' 13.11.2026"
+  },
+  {
     "applicazione" : "GRUPPO VW",
     "attiva" : false,
     "categoria" : "PASTIGLIE FRENO",
@@ -644,23 +661,6 @@
     "thumb" : "assets/thumbs/ard17_56_dc860414e2ff.png",
     "titolo" : "BLACK FRIDAY - KIT FRIZIONE LUK FIAT ",
     "validita" : "MARTEDI 10.11.2026"
-  },
-  {
-    "applicazione" : "BZ & DS",
-    "attiva" : true,
-    "categoria" : "LUBRIFICANTI",
-    "codice" : "hyper-b 5w30",
-    "dataAggiornamento" : "2026-11-12",
-    "id" : 59,
-    "immagine" : "assets/img/ard17_59_bd5248b97738.png",
-    "keywords" : "5W30",
-    "marca" : "ENEOS",
-    "motore" : "TUTTI",
-    "note" : "SOLO IL 13.11.2026",
-    "prezzo" : "4,75€/lt (60lt)",
-    "thumb" : "assets/thumbs/ard17_59_bd5248b97738.png",
-    "titolo" : "BLACK FRIDAY - ENEOS",
-    "validita" : "VENERDI' 13.11.2026"
   },
   {
     "applicazione" : "500X/L; RENEGADE; TIPO; FIORINO/QUBO",

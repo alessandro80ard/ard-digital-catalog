@@ -1,7 +1,7 @@
 [
   {
     "applicazione" : "GRUPPO VW",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "PASTIGLIE FRENO",
     "codice" : "602820",
     "dataAggiornamento" : "2026-11-12",

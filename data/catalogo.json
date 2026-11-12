@@ -239,7 +239,7 @@
   },
   {
     "applicazione" : "Punto; 500; Ypsilon; Ka’; Doblo’; Mito; Musa",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "DISTRIBUZIONE",
     "codice" : "KP1030-2",
     "dataAggiornamento" : "2026-11-12",

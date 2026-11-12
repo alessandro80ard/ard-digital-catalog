@@ -300,7 +300,7 @@ let CATALOGO = [
   },
   {
     "applicazione" : "Punto; 500; Ypsilon; Ka’; Doblo’; Mito; Musa",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "DISTRIBUZIONE",
     "codice" : "KP1030-2",
     "dataAggiornamento" : "2026-11-12",
@@ -1098,7 +1098,24 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
+const CATS = [
+  "BATTERIE",
+  "FILTRI",
+  "FRENANTE",
+  "FRIZIONI",
+  "DISTRIBUZIONE",
+  "LUBRIFICANTI",
+  "PRODOTTI TECNICI",
+  "ELETTRICO/ELETTRONICO",
+  "ATTREZZATURE",
+  "PROMO GENERALI",
+  "DISTRIBUZIONI",
+  "PASTIGLIE FRENO",
+  "SOSPENSIONI",
+  "BLACK FRIDAY",
+  "BLACK FRIDA",
+  "BLACK FRIDAYR"
+];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

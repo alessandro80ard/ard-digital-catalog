@@ -62,10 +62,10 @@
 let CATALOGO = [
   {
     "applicazione" : "HYUNDAI - KIA",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "FILTRI",
     "codice" : "HU7001X",
-    "dataAggiornamento" : "2026-11-10",
+    "dataAggiornamento" : "2026-11-12",
     "id" : 57,
     "immagine" : "assets/img/ard17_57_aeb23a7567af.png",
     "keywords" : "FILTRO OLIO HYUNDAI",
@@ -76,23 +76,6 @@ let CATALOGO = [
     "thumb" : "assets/thumbs/ard17_57_aeb23a7567af.png",
     "titolo" : "BLACK FRIDAY - FILTRO OLIO MANN",
     "validita" : "MERCOLEDI' 11.11.2026"
-  },
-  {
-    "applicazione" : "***BLACK FRIDAY***",
-    "attiva" : false,
-    "categoria" : "BLACK FRIDAY",
-    "codice" : "***BLACK FRIDAY***",
-    "dataAggiornamento" : "2026-11-10",
-    "id" : 52,
-    "immagine" : "assets/img/ard17_52_bd5036da2297.png",
-    "keywords" : "***BLACK FRIDAY***",
-    "marca" : "***BLACK FRIDAY***",
-    "motore" : "***BLACK FRIDAY***",
-    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
-    "prezzo" : "***BLACK FRIDAY***",
-    "thumb" : "assets/thumbs/ard17_52_bd5036da2297.png",
-    "titolo" : "PREPARATI AL BLACK FRIDAY",
-    "validita" : "Ad Esaurimento"
   },
   {
     "applicazione" : "***BLACK FRIDAY***",
@@ -109,6 +92,23 @@ let CATALOGO = [
     "prezzo" : "***BLACK FRIDAY***",
     "thumb" : "assets/thumbs/ard17_80_5e04f57a507e.png",
     "titolo" : "BLACK FRIDAY - LOGISTICA",
+    "validita" : "Ad Esaurimento"
+  },
+  {
+    "applicazione" : "***BLACK FRIDAY***",
+    "attiva" : false,
+    "categoria" : "BLACK FRIDAY",
+    "codice" : "***BLACK FRIDAY***",
+    "dataAggiornamento" : "2026-11-10",
+    "id" : 52,
+    "immagine" : "assets/img/ard17_52_bd5036da2297.png",
+    "keywords" : "***BLACK FRIDAY***",
+    "marca" : "***BLACK FRIDAY***",
+    "motore" : "***BLACK FRIDAY***",
+    "note" : "***BLACK FRIDAY*** | dal 03.11.2026",
+    "prezzo" : "***BLACK FRIDAY***",
+    "thumb" : "assets/thumbs/ard17_52_bd5036da2297.png",
+    "titolo" : "PREPARATI AL BLACK FRIDAY",
     "validita" : "Ad Esaurimento"
   },
   {
@@ -1098,24 +1098,7 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO",
-  "SOSPENSIONI",
-  "BLACK FRIDAY",
-  "BLACK FRIDA",
-  "BLACK FRIDAYR"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

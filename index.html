@@ -424,13 +424,13 @@ let CATALOGO = [
     "codice" : "T-MAX",
     "dataAggiornamento" : "2026-11-12",
     "id" : 42,
-    "immagine" : "assets/img/ENEOS MAX.png",
+    "immagine" : "assets/img/ard17_42_97e778c409ac.png",
     "keywords" : "YAMAHA",
     "marca" : "ENEOS",
     "motore" : "YAMAHA",
     "note" : "ORIGINALE YAMAHA T-MAX",
     "prezzo" : "9,75",
-    "thumb" : "assets/thumbs/ENEOS MAX.png",
+    "thumb" : "assets/thumbs/ard17_42_97e778c409ac.png",
     "titolo" : "OLIO ORIGINALE T-MAX",
     "validita" : "Ad Esaurimento"
   },
@@ -1098,24 +1098,7 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO",
-  "SOSPENSIONI",
-  "BLACK FRIDAY",
-  "BLACK FRIDA",
-  "BLACK FRIDAYR"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

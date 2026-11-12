@@ -290,10 +290,10 @@
   },
   {
     "applicazione" : "Peugeot; Citroën; DS Automobiles",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "FILTRI",
     "codice" : "1610693780",
-    "dataAggiornamento" : "2026-10-30",
+    "dataAggiornamento" : "2026-11-12",
     "id" : 13,
     "immagine" : "assets/img/psa_1610693780.webp",
     "keywords" : "psa, peugeot, citroen, ds, filtro olio, 1610693780, filtri",

@@ -1,10 +1,10 @@
 [
   {
     "applicazione" : "BZ & DS",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "BATTERIE",
     "codice" : "OEM55V",
-    "dataAggiornamento" : "2026-11-02",
+    "dataAggiornamento" : "2026-11-16",
     "id" : 60,
     "immagine" : "assets/img/ard17_60_617c3ecc5213.png",
     "keywords" : "BATTERIA - VW",

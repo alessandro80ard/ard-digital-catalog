@@ -17,23 +17,6 @@
     "validita" : "LUNEDI' 16.11.2026"
   },
   {
-    "applicazione" : "BZ & DS",
-    "attiva" : false,
-    "categoria" : "LUBRIFICANTI",
-    "codice" : "hyper-b 5w30",
-    "dataAggiornamento" : "2026-11-16",
-    "id" : 59,
-    "immagine" : "assets/img/ard17_59_bd5248b97738.png",
-    "keywords" : "5W30",
-    "marca" : "ENEOS",
-    "motore" : "TUTTI",
-    "note" : "SOLO IL 13.11.2026",
-    "prezzo" : "4,75€/lt (60lt)",
-    "thumb" : "assets/thumbs/ard17_59_bd5248b97738.png",
-    "titolo" : "BLACK FRIDAY - ENEOS",
-    "validita" : "VENERDI' 13.11.2026"
-  },
-  {
     "applicazione" : "Pulitore freni spray 500 ml",
     "attiva" : true,
     "categoria" : "FRENANTE",
@@ -338,6 +321,23 @@
     "thumb" : "assets/thumbs/tab_batteries_osram.png",
     "titolo" : "TAB BATTERIE TI REGALA PHILIPS",
     "validita" : "Ad Esaurimento"
+  },
+  {
+    "applicazione" : "BZ & DS",
+    "attiva" : false,
+    "categoria" : "LUBRIFICANTI",
+    "codice" : "hyper-b 5w30",
+    "dataAggiornamento" : "2026-11-16",
+    "id" : 59,
+    "immagine" : "assets/img/ard17_59_bd5248b97738.png",
+    "keywords" : "5W30",
+    "marca" : "ENEOS",
+    "motore" : "TUTTI",
+    "note" : "SOLO IL 13.11.2026",
+    "prezzo" : "4,75€/lt (60lt)",
+    "thumb" : "assets/thumbs/ard17_59_bd5248b97738.png",
+    "titolo" : "BLACK FRIDAY - ENEOS",
+    "validita" : "VENERDI' 13.11.2026"
   },
   {
     "applicazione" : "GRUPPO VW",

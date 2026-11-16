@@ -1,10 +1,10 @@
 [
   {
     "applicazione" : "BZ & DS",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "LUBRIFICANTI",
     "codice" : "hyper-b 5w30",
-    "dataAggiornamento" : "2026-11-12",
+    "dataAggiornamento" : "2026-11-16",
     "id" : 59,
     "immagine" : "assets/img/ard17_59_bd5248b97738.png",
     "keywords" : "5W30",

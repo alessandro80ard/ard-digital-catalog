@@ -62,10 +62,10 @@
 let CATALOGO = [
   {
     "applicazione" : "BZ & DS",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "LUBRIFICANTI",
     "codice" : "hyper-b 5w30",
-    "dataAggiornamento" : "2026-11-12",
+    "dataAggiornamento" : "2026-11-16",
     "id" : 59,
     "immagine" : "assets/img/ard17_59_bd5248b97738.png",
     "keywords" : "5W30",
@@ -1098,24 +1098,7 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO",
-  "SOSPENSIONI",
-  "BLACK FRIDAY",
-  "BLACK FRIDA",
-  "BLACK FRIDAYR"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

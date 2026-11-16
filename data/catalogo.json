@@ -2,6 +2,23 @@
   {
     "applicazione" : "BZ & DS",
     "attiva" : false,
+    "categoria" : "BATTERIE",
+    "codice" : "OEM55V",
+    "dataAggiornamento" : "2026-11-02",
+    "id" : 60,
+    "immagine" : "assets/img/ard17_60_617c3ecc5213.png",
+    "keywords" : "BATTERIA - VW",
+    "marca" : "TAB",
+    "motore" : "TUTTI",
+    "note" : "SOLO IL 16.11.2026",
+    "prezzo" : "49,90€",
+    "thumb" : "assets/thumbs/ard17_60_617c3ecc5213.png",
+    "titolo" : "BLACK FRIDAY - TAB",
+    "validita" : "LUNEDI' 16.11.2026"
+  },
+  {
+    "applicazione" : "BZ & DS",
+    "attiva" : false,
     "categoria" : "LUBRIFICANTI",
     "codice" : "hyper-b 5w30",
     "dataAggiornamento" : "2026-11-16",
@@ -678,23 +695,6 @@
     "thumb" : "assets/thumbs/ard17_61_7773a7f4edb9.png",
     "titolo" : "BLACK FRIDAY - KIT TAGLIANDO",
     "validita" : "MARTEDI' 17.11.2026"
-  },
-  {
-    "applicazione" : "BZ & DS",
-    "attiva" : false,
-    "categoria" : "BATTERIE",
-    "codice" : "OEM55V",
-    "dataAggiornamento" : "2026-11-02",
-    "id" : 60,
-    "immagine" : "assets/img/ard17_60_617c3ecc5213.png",
-    "keywords" : "BATTERIA - VW",
-    "marca" : "TAB",
-    "motore" : "TUTTI",
-    "note" : "SOLO IL 16.11.2026",
-    "prezzo" : "49,90€",
-    "thumb" : "assets/thumbs/ard17_60_617c3ecc5213.png",
-    "titolo" : "BLACK FRIDAY - TAB",
-    "validita" : "LUNEDI' 16.11.2026"
   },
   {
     "applicazione" : "GRANDE PUNTO; DOBLO'; FIORINO/QUBO/NEMO/BIPPER; ecc ecc",

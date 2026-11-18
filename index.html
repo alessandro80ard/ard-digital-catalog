@@ -78,23 +78,6 @@ let CATALOGO = [
     "validita" : "MERCOLEDI' 18.11.2026"
   },
   {
-    "applicazione" : "500X/L; RENEGADE; TIPO; FIORINO/QUBO",
-    "attiva" : false,
-    "categoria" : "FILTRI",
-    "codice" : "U.F.I. 30.677.00;25.083.00;26.052.00;FP003",
-    "dataAggiornamento" : "2026-11-17",
-    "id" : 61,
-    "immagine" : "assets/img/ard17_61_7773a7f4edb9.png",
-    "keywords" : "FILTRI TAGLIANDO - 1.6 MJET",
-    "marca" : "UFI",
-    "motore" : "1.6 DIESEL MJET/CRD",
-    "note" : "SOLO IL 17.11.2026",
-    "prezzo" : "49,90€ - 39,90€ - 33,99€",
-    "thumb" : "assets/thumbs/ard17_61_7773a7f4edb9.png",
-    "titolo" : "BLACK FRIDAY - KIT TAGLIANDO",
-    "validita" : "MARTEDI' 17.11.2026"
-  },
-  {
     "applicazione" : "Pulitore freni spray 500 ml",
     "attiva" : true,
     "categoria" : "FRENANTE",
@@ -399,74 +382,6 @@ let CATALOGO = [
     "thumb" : "assets/thumbs/tab_batteries_osram.png",
     "titolo" : "TAB BATTERIE TI REGALA PHILIPS",
     "validita" : "Ad Esaurimento"
-  },
-  {
-    "applicazione" : "BZ & DS",
-    "attiva" : false,
-    "categoria" : "BATTERIE",
-    "codice" : "OEM55V",
-    "dataAggiornamento" : "2026-11-16",
-    "id" : 60,
-    "immagine" : "assets/img/ard17_60_617c3ecc5213.png",
-    "keywords" : "BATTERIA - VW",
-    "marca" : "TAB",
-    "motore" : "TUTTI",
-    "note" : "SOLO IL 16.11.2026",
-    "prezzo" : "49,90€",
-    "thumb" : "assets/thumbs/ard17_60_617c3ecc5213.png",
-    "titolo" : "BLACK FRIDAY - TAB",
-    "validita" : "LUNEDI' 16.11.2026"
-  },
-  {
-    "applicazione" : "BZ & DS",
-    "attiva" : false,
-    "categoria" : "LUBRIFICANTI",
-    "codice" : "hyper-b 5w30",
-    "dataAggiornamento" : "2026-11-16",
-    "id" : 59,
-    "immagine" : "assets/img/ard17_59_bd5248b97738.png",
-    "keywords" : "5W30",
-    "marca" : "ENEOS",
-    "motore" : "TUTTI",
-    "note" : "SOLO IL 13.11.2026",
-    "prezzo" : "4,75€/lt (60lt)",
-    "thumb" : "assets/thumbs/ard17_59_bd5248b97738.png",
-    "titolo" : "BLACK FRIDAY - ENEOS",
-    "validita" : "VENERDI' 13.11.2026"
-  },
-  {
-    "applicazione" : "GRUPPO VW",
-    "attiva" : false,
-    "categoria" : "PASTIGLIE FRENO",
-    "codice" : "602820",
-    "dataAggiornamento" : "2026-11-12",
-    "id" : 58,
-    "immagine" : "assets/img/ard17_58_7c2e0f725021.png",
-    "keywords" : "POSTERIORI VW",
-    "marca" : "ATE",
-    "motore" : "TUTTI",
-    "note" : "SOLO IL 12.11.2026",
-    "prezzo" : "16,99€",
-    "thumb" : "assets/thumbs/ard17_58_7c2e0f725021.png",
-    "titolo" : "BLACK FRIDAY - PASTIGLIE ATE VW POST.",
-    "validita" : "GIOVED' 12.11.2026"
-  },
-  {
-    "applicazione" : "HYUNDAI - KIA",
-    "attiva" : false,
-    "categoria" : "FILTRI",
-    "codice" : "HU7001X",
-    "dataAggiornamento" : "2026-11-12",
-    "id" : 57,
-    "immagine" : "assets/img/ard17_57_aeb23a7567af.png",
-    "keywords" : "FILTRO OLIO HYUNDAI",
-    "marca" : "MANN",
-    "motore" : "1,7 D",
-    "note" : "SOLO IL 11.11.2026",
-    "prezzo" : "3,33€ (minimo 3 pezzi - tot. 9,99€)",
-    "thumb" : "assets/thumbs/ard17_57_aeb23a7567af.png",
-    "titolo" : "BLACK FRIDAY - FILTRO OLIO MANN",
-    "validita" : "MERCOLEDI' 11.11.2026"
   },
   {
     "applicazione" : "***BLACK FRIDAY***",
@@ -1098,7 +1013,24 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
+const CATS = [
+  "BATTERIE",
+  "FILTRI",
+  "FRENANTE",
+  "FRIZIONI",
+  "DISTRIBUZIONE",
+  "LUBRIFICANTI",
+  "PRODOTTI TECNICI",
+  "ELETTRICO/ELETTRONICO",
+  "ATTREZZATURE",
+  "PROMO GENERALI",
+  "DISTRIBUZIONI",
+  "PASTIGLIE FRENO",
+  "SOSPENSIONI",
+  "BLACK FRIDAY",
+  "BLACK FRIDA",
+  "BLACK FRIDAYR"
+];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

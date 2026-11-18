@@ -1,5 +1,22 @@
 [
   {
+    "applicazione" : "TUTTI I VEICOLI BZ & DS",
+    "attiva" : true,
+    "categoria" : "PRODOTTI TECNICI",
+    "codice" : "ROSSO 20",
+    "dataAggiornamento" : "2026-11-18",
+    "id" : 63,
+    "immagine" : "assets/img/ard17_63_cd6d7342b2b0.png",
+    "keywords" : "ANTIGELO ROSSO",
+    "marca" : "CORA-EURODET",
+    "motore" : "BZ & DS",
+    "note" : "SOLO IL 19.11.2026",
+    "prezzo" : "45,50€",
+    "thumb" : "assets/thumbs/ard17_63_cd6d7342b2b0.png",
+    "titolo" : "BLACK FRIDAY - PROTETTIVO RADIATORI ROSSO 20LT",
+    "validita" : "GIOVEDI' 19.11.2026"
+  },
+  {
     "applicazione" : "GRANDE PUNTO; DOBLO'; FIORINO/QUBO/NEMO/BIPPER; ecc ecc",
     "attiva" : false,
     "categoria" : "PASTIGLIE FRENO",
@@ -627,23 +644,6 @@
     "thumb" : "assets/thumbs/ard17_56_dc860414e2ff.png",
     "titolo" : "BLACK FRIDAY - KIT FRIZIONE LUK FIAT ",
     "validita" : "MARTEDI 10.11.2026"
-  },
-  {
-    "applicazione" : "TUTTI I VEICOLI BZ & DS",
-    "attiva" : false,
-    "categoria" : "PRODOTTI TECNICI",
-    "codice" : "ROSSO 20",
-    "dataAggiornamento" : "2026-11-02",
-    "id" : 63,
-    "immagine" : "assets/img/ard17_63_cd6d7342b2b0.png",
-    "keywords" : "ANTIGELO ROSSO",
-    "marca" : "CORA-EURODET",
-    "motore" : "BZ & DS",
-    "note" : "SOLO IL 19.11.2026",
-    "prezzo" : "45,50€",
-    "thumb" : "assets/thumbs/ard17_63_cd6d7342b2b0.png",
-    "titolo" : "BLACK FRIDAY - PROTETTIVO RADIATORI ROSSO 20LT",
-    "validita" : "GIOVEDI' 19.11.2026"
   },
   {
     "applicazione" : "FIAT - ALFA - LANCIA",

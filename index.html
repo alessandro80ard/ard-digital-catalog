@@ -847,15 +847,15 @@ let CATALOGO = [
     "attiva" : false,
     "categoria" : "FILTRI",
     "codice" : "23.438.00",
-    "dataAggiornamento" : "2026-11-02",
+    "dataAggiornamento" : "2026-11-18",
     "id" : 67,
-    "immagine" : "assets/img/ard17_67_73ada30ece3a.png",
+    "immagine" : "assets/img/ard17_67_be666ee3e89d.png",
     "keywords" : "FILTRO OLIO FIRE NEW",
     "marca" : "UFI",
     "motore" : "FIAT",
     "note" : "SOLO IL 25.11.2026",
     "prezzo" : "1,99€ - 1,64 (x50pz)",
-    "thumb" : "assets/thumbs/ard17_67_73ada30ece3a.png",
+    "thumb" : "assets/thumbs/ard17_67_be666ee3e89d.png",
     "titolo" : "BLACK FRIDAY - FILTRI UFI",
     "validita" : "MERCOLEDI' 25.11.2026"
   },
@@ -1098,24 +1098,7 @@ let CATALOGO = [
     "validita" : "Ad Esaurimento"
   }
 ];
-const CATS = [
-  "BATTERIE",
-  "FILTRI",
-  "FRENANTE",
-  "FRIZIONI",
-  "DISTRIBUZIONE",
-  "LUBRIFICANTI",
-  "PRODOTTI TECNICI",
-  "ELETTRICO/ELETTRONICO",
-  "ATTREZZATURE",
-  "PROMO GENERALI",
-  "DISTRIBUZIONI",
-  "PASTIGLIE FRENO",
-  "SOSPENSIONI",
-  "BLACK FRIDAY",
-  "BLACK FRIDA",
-  "BLACK FRIDAYR"
-];
+const CATS = ["BATTERIE","FILTRI","FRENANTE","FRIZIONI","DISTRIBUZIONE","LUBRIFICANTI","PRODOTTI TECNICI","ELETTRICO\/ELETTRONICO","ATTREZZATURE","PROMO GENERALI","DISTRIBUZIONI","PASTIGLIE FRENO","SOSPENSIONI","BLACK FRIDAY","BLACK FRIDA","BLACK FRIDAYR"];
 let state={q:'',cat:'TUTTE',brand:'TUTTE',view:'grid'};
 const $=id=>document.getElementById(id); const norm=s=>(s||'').toString().toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'');
 function searchable(x){return norm([x.titolo,x.categoria,x.marca,x.codice,x.applicazione,x.motore,x.prezzo,x.validita,x.keywords].join(' '))}

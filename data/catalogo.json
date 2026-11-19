@@ -206,9 +206,9 @@
   {
     "applicazione" : "Spazzole tergicristalli Valeo First VF41/VF45/VF48/VF51/VF55/VF60/VF65",
     "attiva" : true,
-    "categoria" : "PROMO GENERALI",
+    "categoria" : "TERGICRISTALLO",
     "codice" : "VAL575540-VAL575561",
-    "dataAggiornamento" : "2026-11-12",
+    "dataAggiornamento" : "2026-11-19",
     "id" : 20,
     "immagine" : "assets/img/valeo_tergi_assortito.webp",
     "keywords" : "valeo, tergicristalli, spazzole, valeo first, vf41, vf45, vf48, vf51, vf55, vf60, vf65, promo generale",

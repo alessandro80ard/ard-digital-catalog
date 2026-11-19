@@ -562,10 +562,10 @@
   },
   {
     "applicazione" : "TUTTI",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "LUBRIFICANTI",
     "codice" : "XXXX",
-    "dataAggiornamento" : "2026-11-12",
+    "dataAggiornamento" : "2026-11-19",
     "id" : 39,
     "immagine" : "assets/img/febi_eneos_champion_xxxx.png",
     "keywords" : "CAMBIO AUTOMATICO",

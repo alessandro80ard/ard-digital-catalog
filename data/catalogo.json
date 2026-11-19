@@ -1,10 +1,27 @@
 [
   {
-    "applicazione" : "TUTTI I VEICOLI BZ & DS",
+    "applicazione" : "FIAT - ALFA - LANCIA",
     "attiva" : true,
+    "categoria" : "DISTRIBUZIONI",
+    "codice" : "KP1030-2",
+    "dataAggiornamento" : "2026-11-19",
+    "id" : 64,
+    "immagine" : "assets/img/ard17_64_231be557d066.png",
+    "keywords" : "DISTRIBUZIONE FIAT",
+    "marca" : "GRAF - METELLI",
+    "motore" : "199A4000; 350A1000",
+    "note" : "SOLO IL 20.11.2026",
+    "prezzo" : "37,370€",
+    "thumb" : "assets/thumbs/ard17_64_231be557d066.png",
+    "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE CON POMPA ACQUA FIAT",
+    "validita" : "VENERDI' 20.11.2026"
+  },
+  {
+    "applicazione" : "TUTTI I VEICOLI BZ & DS",
+    "attiva" : false,
     "categoria" : "PRODOTTI TECNICI",
     "codice" : "ROSSO 20",
-    "dataAggiornamento" : "2026-11-18",
+    "dataAggiornamento" : "2026-11-19",
     "id" : 63,
     "immagine" : "assets/img/ard17_63_cd6d7342b2b0.png",
     "keywords" : "ANTIGELO ROSSO",
@@ -644,23 +661,6 @@
     "thumb" : "assets/thumbs/ard17_56_dc860414e2ff.png",
     "titolo" : "BLACK FRIDAY - KIT FRIZIONE LUK FIAT ",
     "validita" : "MARTEDI 10.11.2026"
-  },
-  {
-    "applicazione" : "FIAT - ALFA - LANCIA",
-    "attiva" : false,
-    "categoria" : "DISTRIBUZIONI",
-    "codice" : "KP1030-2",
-    "dataAggiornamento" : "2026-11-02",
-    "id" : 64,
-    "immagine" : "assets/img/ard17_64_231be557d066.png",
-    "keywords" : "DISTRIBUZIONE FIAT",
-    "marca" : "GRAF - METELLI",
-    "motore" : "199A4000; 350A1000",
-    "note" : "SOLO IL 20.11.2026",
-    "prezzo" : "37,370€",
-    "thumb" : "assets/thumbs/ard17_64_231be557d066.png",
-    "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE CON POMPA ACQUA FIAT",
-    "validita" : "VENERDI' 20.11.2026"
   },
   {
     "applicazione" : "TUTTI I VEICOLI A MOTORE",

@@ -613,10 +613,10 @@
   },
   {
     "applicazione" : "GRANDE PUNTO; DOBLO'; FIORINO/QUBO/NEMO/BIPPER; ecc ecc",
-    "attiva" : false,
+    "attiva" : true,
     "categoria" : "BLACK FRIDAY",
     "codice" : "0986424597",
-    "dataAggiornamento" : "2026-11-19",
+    "dataAggiornamento" : "2026-11-21",
     "id" : 62,
     "immagine" : "assets/img/ard17_62_c91644db5f17.png",
     "keywords" : "PASTIGLIE FRENO",

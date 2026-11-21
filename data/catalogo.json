@@ -579,7 +579,7 @@
   },
   {
     "applicazione" : "TUTTI I VEICOLI BZ & DS",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "BLACK FRIDAY",
     "codice" : "ROSSO 20",
     "dataAggiornamento" : "2026-11-21",

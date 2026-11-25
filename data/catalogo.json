@@ -933,5 +933,22 @@
     "thumb" : "assets/thumbs/ard_ipad_82_9ba7830c19e7.png",
     "titolo" : "BLACK FRIDAY - NGK",
     "validita" : "solo il 06.11.2026"
+  },
+  {
+    "applicazione" : "VARIE APPLICAZIONI",
+    "attiva" : true,
+    "categoria" : "BLACK FRIDAY",
+    "codice" : "Tre.Vi GO-001",
+    "dataAggiornamento" : "2026-11-25",
+    "id" : 84,
+    "immagine" : "assets/img/ard_ipad_84_200b4e02785b.png",
+    "keywords" : "FILTRI FIRE",
+    "marca" : "Tre.Vi",
+    "motore" : "VARIE APPLICAZIONI",
+    "note" : "MERCOLEDÌ ' 25.11.2026",
+    "prezzo" : "1,89€ x10pz - 1,59€ x50pz",
+    "thumb" : "assets/thumbs/ard_ipad_84_200b4e02785b.png",
+    "titolo" : "BLACK FRIDAY - FILTRI FIRE",
+    "validita" : "MERCOLEDÌ ' 25.11.2026"
   }
 ]

@@ -18,10 +18,10 @@
   },
   {
     "applicazione" : "TUTTI I VEICOLI A MOTORE",
-    "attiva" : true,
+    "attiva" : false,
     "categoria" : "BLACK FRIDAY",
     "codice" : "5W30 504/507 VW",
-    "dataAggiornamento" : "2026-11-24",
+    "dataAggiornamento" : "2026-11-25",
     "id" : 66,
     "immagine" : "assets/img/ard17_66_bfef6bb1f668.png",
     "keywords" : "5W30",

@@ -950,5 +950,22 @@
     "thumb" : "assets/thumbs/ard_ipad_82_9ba7830c19e7.png",
     "titolo" : "BLACK FRIDAY - NGK",
     "validita" : "solo il 06.11.2026"
+  },
+  {
+    "applicazione" : "GRANDE PUNTO; DOBLO'; FIORINO/QUBO/NEMO/BIPPER; ecc ecc",
+    "attiva" : true,
+    "categoria" : "BLACK FRIDAY",
+    "codice" : "LP2276",
+    "dataAggiornamento" : "2026-11-25",
+    "id" : 85,
+    "immagine" : "assets/img/ard_ipad_85_85d20082b922.png",
+    "keywords" : "PASTIGLIE FRENO",
+    "marca" : "DRLPHI",
+    "motore" : "BZ & DS",
+    "note" : "FINO AL 30 NOVEMBRE",
+    "prezzo" : "9,90€",
+    "thumb" : "assets/thumbs/ard_ipad_85_85d20082b922.png",
+    "titolo" : "BLACK FRIDAY - PASTIGLIE DRLPHI",
+    "validita" : "FINO AL 30 NOVEMBRE"
   }
 ]

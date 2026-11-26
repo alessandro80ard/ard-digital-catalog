@@ -1,20 +1,20 @@
 [
   {
-    "applicazione" : "VARIE APPLICAZIONI",
+    "applicazione" : "DIESEL",
     "attiva" : true,
     "categoria" : "BLACK FRIDAY",
-    "codice" : "Tre.Vi GO-001",
-    "dataAggiornamento" : "2026-11-25",
-    "id" : 84,
-    "immagine" : "assets/img/ard_ipad_84_200b4e02785b.png",
-    "keywords" : "FILTRI FIRE",
-    "marca" : "Tre.Vi",
-    "motore" : "VARIE APPLICAZIONI",
-    "note" : "MERCOLEDÌ ' 25.11.2026",
-    "prezzo" : "1,89€ x10pz - 1,59€ x50pz",
-    "thumb" : "assets/thumbs/ard_ipad_84_200b4e02785b.png",
-    "titolo" : "BLACK FRIDAY - FILTRI FIRE",
-    "validita" : "MERCOLEDÌ ' 25.11.2026"
+    "codice" : "KTBWP8841",
+    "dataAggiornamento" : "2026-11-26",
+    "id" : 68,
+    "immagine" : "assets/img/ard17_68_98b21692b418.png",
+    "keywords" : "POMPA CON SENSORE INTEGRATO - ORIGINALE",
+    "marca" : "DAYCO",
+    "motore" : "VW - AUDI - SEAT - SKODA",
+    "note" : "",
+    "prezzo" : "149,90€",
+    "thumb" : "assets/thumbs/ard17_68_98b21692b418.png",
+    "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE VW",
+    "validita" : "GIOVEDI' 26.11.2026"
   },
   {
     "applicazione" : "GRANDE PUNTO; DOBLO'; FIORINO/QUBO/NEMO/BIPPER; ecc ecc",
@@ -32,6 +32,23 @@
     "thumb" : "assets/thumbs/ard_ipad_85_85d20082b922.png",
     "titolo" : "BLACK FRIDAY - PASTIGLIE DELPHI",
     "validita" : "FINO AL 30 NOVEMBRE"
+  },
+  {
+    "applicazione" : "VARIE APPLICAZIONI",
+    "attiva" : true,
+    "categoria" : "BLACK FRIDAY",
+    "codice" : "Tre.Vi GO-001",
+    "dataAggiornamento" : "2026-11-25",
+    "id" : 84,
+    "immagine" : "assets/img/ard_ipad_84_200b4e02785b.png",
+    "keywords" : "FILTRI FIRE",
+    "marca" : "Tre.Vi",
+    "motore" : "VARIE APPLICAZIONI",
+    "note" : "MERCOLEDÌ ' 25.11.2026",
+    "prezzo" : "1,89€ x10pz - 1,59€ x50pz",
+    "thumb" : "assets/thumbs/ard_ipad_84_200b4e02785b.png",
+    "titolo" : "BLACK FRIDAY - FILTRI FIRE",
+    "validita" : "MERCOLEDÌ ' 25.11.2026"
   },
   {
     "applicazione" : "***BLACK FRIDAY***",
@@ -746,23 +763,6 @@
     "thumb" : "assets/thumbs/ard17_63_cd6d7342b2b0.png",
     "titolo" : "BLACK FRIDAY - PROTETTIVO RADIATORI ROSSO 20LT",
     "validita" : "GIOVEDI' 19.11.2026"
-  },
-  {
-    "applicazione" : "DIESEL",
-    "attiva" : false,
-    "categoria" : "BLACK FRIDAY",
-    "codice" : "KTBWP8841",
-    "dataAggiornamento" : "2026-11-19",
-    "id" : 68,
-    "immagine" : "assets/img/ard17_68_98b21692b418.png",
-    "keywords" : "POMPA CON SENSORE INTEGRATO - ORIGINALE",
-    "marca" : "DAYCO",
-    "motore" : "VW - AUDI - SEAT - SKODA",
-    "note" : "",
-    "prezzo" : "149,90€",
-    "thumb" : "assets/thumbs/ard17_68_98b21692b418.png",
-    "titolo" : "BLACK FRIDAY - KIT DISTRIBUZIONE VW",
-    "validita" : "GIOVEDI' 26.11.2026"
   },
   {
     "applicazione" : "FIAT BENZIAN",
